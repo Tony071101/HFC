@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLHFC", "QLHFC.csproj", "{BBF1D29D-83EE-4144-B858-0AE995A31DD9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBF1D29D-83EE-4144-B858-0AE995A31DD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBF1D29D-83EE-4144-B858-0AE995A31DD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBF1D29D-83EE-4144-B858-0AE995A31DD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBF1D29D-83EE-4144-B858-0AE995A31DD9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {229DA815-BC56-4ED3-A133-484D2DD58689}
+	EndGlobalSection
+EndGlobal
