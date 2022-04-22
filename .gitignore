@@ -361,3 +361,11 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+.m2/repository/asm/asm-parent/3.0/asm-parent-3.0.pom.sha1
+.m2/repository/asm/asm-parent/3.0/asm-parent-3.0.pom
+*.sha1
+*.repositories
+*.pom
+*.jar
+*.war
+*.xml
