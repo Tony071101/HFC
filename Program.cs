@@ -1,4 +1,4 @@
-using MySql.Data.MySqlClient;
+
 
 namespace QLHFC
 {
@@ -30,7 +30,7 @@ namespace QLHFC
 
             //Console.Read();
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormMain());
+            Application.Run(new FormLogin());
         }
     }
 }
