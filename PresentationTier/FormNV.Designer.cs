@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlNhanVien = new System.Windows.Forms.Panel();
+            this.cmbSearch = new System.Windows.Forms.ComboBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.txtPassword_NV = new System.Windows.Forms.TextBox();
@@ -51,6 +53,8 @@
             // 
             // pnlNhanVien
             // 
+            this.pnlNhanVien.Controls.Add(this.cmbSearch);
+            this.pnlNhanVien.Controls.Add(this.txtSearch);
             this.pnlNhanVien.Controls.Add(this.btnDel);
             this.pnlNhanVien.Controls.Add(this.btnEdit);
             this.pnlNhanVien.Controls.Add(this.txtPassword_NV);
@@ -71,6 +75,38 @@
             this.pnlNhanVien.Name = "pnlNhanVien";
             this.pnlNhanVien.Size = new System.Drawing.Size(1061, 675);
             this.pnlNhanVien.TabIndex = 3;
+            // 
+            // cmbSearch
+            // 
+            this.cmbSearch.AutoCompleteCustomSource.AddRange(new string[] {
+            "ID",
+            "Họ Tên",
+            "Địa Chỉ",
+            "SĐT",
+            "Username",
+            "Password"});
+            this.cmbSearch.FormattingEnabled = true;
+            this.cmbSearch.Items.AddRange(new object[] {
+            "ID_NV",
+            "TenNV",
+            "DiaChiNV",
+            "SDT_NV",
+            "Username",
+            "Password"});
+            this.cmbSearch.Location = new System.Drawing.Point(516, 237);
+            this.cmbSearch.Name = "cmbSearch";
+            this.cmbSearch.Size = new System.Drawing.Size(97, 28);
+            this.cmbSearch.TabIndex = 17;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSearch.Location = new System.Drawing.Point(619, 237);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(432, 34);
+            this.txtSearch.TabIndex = 15;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnDel
             // 
@@ -151,9 +187,11 @@
             // 
             // txtID_NV
             // 
+            this.txtID_NV.BackColor = System.Drawing.Color.Silver;
             this.txtID_NV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtID_NV.Location = new System.Drawing.Point(44, 21);
             this.txtID_NV.Name = "txtID_NV";
+            this.txtID_NV.ReadOnly = true;
             this.txtID_NV.Size = new System.Drawing.Size(463, 34);
             this.txtID_NV.TabIndex = 7;
             // 
@@ -267,5 +305,7 @@
         private Label label2;
         private Label label1;
         private Button btnAdd;
+        private TextBox txtSearch;
+        private ComboBox cmbSearch;
     }
 }
