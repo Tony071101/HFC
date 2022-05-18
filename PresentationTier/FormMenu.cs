@@ -13,13 +13,35 @@ namespace QLHFC.PresentationTier
 {
     public partial class FormMenu : Form
     {
+        string TenNV = "", DiaChiNV = "", SDT_NV = "", Username = "", Password = "";
         
         public FormMenu()
         {
             InitializeComponent();
+
         }
-
-
+        public FormMenu(String TenNV, String DiaChiNV, String SDT_NV, String Username, String Password)
+        {
+            InitializeComponent();
+            this.TenNV = TenNV;
+            this.DiaChiNV = DiaChiNV;
+            this.SDT_NV = SDT_NV;
+            this.Username = Username;
+            this.Password = Password;
+            
+        }
+        private void hÓAĐƠNToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHoaDon f = new FormHoaDon();
+            f.MdiParent = this;
+            f.Show();
+        }
+        private void đĂNGXUẤTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLogin f = new FormLogin();
+            f.Show();
+            this.Close();
+        }
         private void nHÂNVIÊNToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormNV f = new FormNV();
@@ -33,10 +55,24 @@ namespace QLHFC.PresentationTier
             f.MdiParent = this;
             f.Show();
         }
-
         private void FormMenu_Load(object sender, EventArgs e)
         {
-            toolStripStatusLabel1.Text = "";
+            toolStripStatusLabel1.Text = "Welcome to Hutech Fried Chicken";
+            if (Username == "admin")
+            {
+                
+            }
+            else
+            {
+                nHÂNVIÊNToolStripMenuItem.Enabled = false;
+                tHỰCĐƠNToolStripMenuItem.Enabled = false;
+            }
+        }
+        private void tHỰCĐƠNToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormThucDon f = new FormThucDon();
+            f.MdiParent = this;
+            f.Show();
         }
     }
 }
