@@ -1,5 +1,6 @@
 ﻿using QLHFC.PresentationTier;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace QLHFC
 {
@@ -13,19 +14,27 @@ namespace QLHFC
         {
             InitializeComponent();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             FormMenu f;
             conn.Open();
             string dangnhap = "SELECT * FROM hfc.nhanvien WHERE Username= '" + txtUsername.Text + "' and Password = '" + txtPassword.Text + "'";
             MySqlCommand command = new MySqlCommand(dangnhap, conn);
+            adap = new MySqlDataAdapter(dangnhap, conn);
+            DataTable dt = new DataTable();
+            adap.Fill(dt);
             MySqlDataReader dr = command.ExecuteReader();
             if (dr.Read() == true)
             {
-                f = new FormMenu();
-                this.Hide();
-                f.ShowDialog();
+                if(dt.Rows.Count > 0){
+                    f = new FormMenu(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString(), dt.Rows[0][4].ToString());
+                    this.Hide();
+                    f.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                }
             }
             else
             {
@@ -35,22 +44,13 @@ namespace QLHFC
                 txtUsername.Focus();
             }
             conn.Close();
-            this.Show();
+            this.Hide();
         }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Bạn có muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             Application.Exit();
         }
-
-        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Bạn có muốn thoát chương trình?","Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != System.Windows.Forms.DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
-        }
-
         private void btnSignup_Click(object sender, EventArgs e)
         {
             FormSignup f = new FormSignup();
