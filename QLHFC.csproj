@@ -24,13 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DTO\" />
-    <Folder Include="DataTier\" />
-    <Folder Include="BussinessTier\" />
-    <Folder Include="DataContext\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
     <PackageReference Include="MySql.Data" Version="8.0.28" />
     <PackageReference Include="MySqlConnector" Version="2.1.8" />
