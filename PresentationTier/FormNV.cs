@@ -23,7 +23,6 @@ namespace QLHFC.PresentationTier
         {
             InitializeComponent();
         }
-
         private void FormNV_Load(object sender, EventArgs e)
         {
             try
@@ -62,7 +61,6 @@ namespace QLHFC.PresentationTier
             conn.Close();
             dgvNV.DataSource = mytable;
         }
-
         private void btnEdit_Click(object sender, EventArgs e)
         {
             conn.Open();
@@ -72,7 +70,6 @@ namespace QLHFC.PresentationTier
             conn.Close();
             Read_Data();
         }
-
         private void btnDel_Click(object sender, EventArgs e)
         {
             conn.Open();
@@ -82,7 +79,6 @@ namespace QLHFC.PresentationTier
             conn.Close();
             Read_Data();
         }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();
@@ -94,7 +90,17 @@ namespace QLHFC.PresentationTier
             txtUsername_NV.Text = Convert.ToString(row.Cells["Username"].Value);
             txtPassword_NV.Text = Convert.ToString(row.Cells["Password"].Value);
         }
-
-        
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            conn.Open();
+            string query_search = "SELECT * FROM hfc.nhanvien WHERE " + cmbSearch.Text + " like '%" + txtSearch.Text + "%'";
+            MySqlCommand command = new MySqlCommand(query_search, conn);
+            command.ExecuteNonQuery();
+            adap = new MySqlDataAdapter(command);
+            mytable = new DataTable();
+            adap.Fill(mytable);
+            conn.Close();
+            dgvNV.DataSource = mytable;
+        }
     }
 }
