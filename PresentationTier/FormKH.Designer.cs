@@ -41,12 +41,16 @@
             this.dgvKH = new System.Windows.Forms.DataGridView();
             this.txtID_KH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmbSearchKH = new System.Windows.Forms.ComboBox();
+            this.txtSearchKH = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtSearchKH);
+            this.panel1.Controls.Add(this.cmbSearchKH);
             this.panel1.Controls.Add(this.txtSDT_KH);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtDiaChiKH);
@@ -62,7 +66,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1077, 632);
+            this.panel1.Size = new System.Drawing.Size(1055, 678);
             this.panel1.TabIndex = 0;
             // 
             // txtSDT_KH
@@ -70,7 +74,7 @@
             this.txtSDT_KH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSDT_KH.Location = new System.Drawing.Point(618, 95);
             this.txtSDT_KH.Name = "txtSDT_KH";
-            this.txtSDT_KH.Size = new System.Drawing.Size(324, 34);
+            this.txtSDT_KH.Size = new System.Drawing.Size(425, 34);
             this.txtSDT_KH.TabIndex = 11;
             // 
             // label4
@@ -88,7 +92,7 @@
             this.txtDiaChiKH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDiaChiKH.Location = new System.Drawing.Point(651, 36);
             this.txtDiaChiKH.Name = "txtDiaChiKH";
-            this.txtDiaChiKH.Size = new System.Drawing.Size(291, 34);
+            this.txtDiaChiKH.Size = new System.Drawing.Size(392, 34);
             this.txtDiaChiKH.TabIndex = 9;
             // 
             // label3
@@ -158,15 +162,17 @@
             this.dgvKH.Name = "dgvKH";
             this.dgvKH.RowHeadersWidth = 51;
             this.dgvKH.RowTemplate.Height = 29;
-            this.dgvKH.Size = new System.Drawing.Size(1071, 361);
+            this.dgvKH.Size = new System.Drawing.Size(1049, 398);
             this.dgvKH.TabIndex = 2;
             this.dgvKH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKH_CellContentClick);
             // 
             // txtID_KH
             // 
+            this.txtID_KH.BackColor = System.Drawing.Color.Silver;
             this.txtID_KH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtID_KH.Location = new System.Drawing.Point(53, 36);
             this.txtID_KH.Name = "txtID_KH";
+            this.txtID_KH.ReadOnly = true;
             this.txtID_KH.Size = new System.Drawing.Size(466, 34);
             this.txtID_KH.TabIndex = 1;
             // 
@@ -180,11 +186,41 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID:";
             // 
+            // cmbSearchKH
+            // 
+            this.cmbSearchKH.AutoCompleteCustomSource.AddRange(new string[] {
+            "ID",
+            "Họ Tên",
+            "Địa Chỉ",
+            "SĐT",
+            "Username",
+            "Password"});
+            this.cmbSearchKH.FormattingEnabled = true;
+            this.cmbSearchKH.Items.AddRange(new object[] {
+            "ID_KH",
+            "TenKH",
+            "DiaChiKH",
+            "SDT_KH"});
+            this.cmbSearchKH.Location = new System.Drawing.Point(561, 212);
+            this.cmbSearchKH.Name = "cmbSearchKH";
+            this.cmbSearchKH.Size = new System.Drawing.Size(97, 28);
+            this.cmbSearchKH.TabIndex = 18;
+            // 
+            // txtSearchKH
+            // 
+            this.txtSearchKH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchKH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSearchKH.Location = new System.Drawing.Point(664, 212);
+            this.txtSearchKH.Name = "txtSearchKH";
+            this.txtSearchKH.Size = new System.Drawing.Size(379, 34);
+            this.txtSearchKH.TabIndex = 19;
+            this.txtSearchKH.TextChanged += new System.EventHandler(this.txtSearchKH_TextChanged);
+            // 
             // FormKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1077, 632);
+            this.ClientSize = new System.Drawing.Size(1055, 678);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormKH";
@@ -213,5 +249,7 @@
         private Label label3;
         private TextBox txtNameKH;
         private Label label2;
+        private ComboBox cmbSearchKH;
+        private TextBox txtSearchKH;
     }
 }
