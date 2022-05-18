@@ -23,7 +23,6 @@ namespace QLHFC.PresentationTier
         {
             InitializeComponent();
         }
-
         private void FormKH_Load(object sender, EventArgs e)
         {
             try
@@ -43,7 +42,6 @@ namespace QLHFC.PresentationTier
                 MessageBox.Show("Lỗi kết nối MySQL.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnAddKH_Click(object sender, EventArgs e)
         {
             conn.Open();
@@ -53,7 +51,6 @@ namespace QLHFC.PresentationTier
             conn.Close();
             Read_Data();
         }
-
         private void btnDelKH_Click(object sender, EventArgs e)
         {
             conn.Open();
@@ -63,11 +60,10 @@ namespace QLHFC.PresentationTier
             conn.Close();
             Read_Data();
         }
-
         private void btnEditKH_Click(object sender, EventArgs e)
         {
             conn.Open();
-            string query_edit = "UPDATE hfc.khachhang SET TenKH ='" + txtNameKH.Text + "', DiaChiKH ='" + txtDiaChiKH.Text + "',SDT_KH ='" + txtSDT_KH.Text + "' WHERE ID_NV = '" + int.Parse(txtID_KH.Text) + "'";
+            string query_edit = "UPDATE hfc.khachhang SET TenKH ='" + txtNameKH.Text + "', DiaChiKH ='" + txtDiaChiKH.Text + "',SDT_KH ='" + txtSDT_KH.Text + "' WHERE ID_KH = '" + int.Parse(txtID_KH.Text) + "'";
             MySqlCommand command = new MySqlCommand(query_edit, conn);
             command.ExecuteNonQuery();
             conn.Close();
@@ -91,6 +87,18 @@ namespace QLHFC.PresentationTier
             txtNameKH.Text = Convert.ToString(row.Cells["TenKH"].Value);
             txtDiaChiKH.Text = Convert.ToString(row.Cells["DiaChiKH"].Value);
             txtSDT_KH.Text = Convert.ToString(row.Cells["SDT_KH"].Value);
+        }
+        private void txtSearchKH_TextChanged(object sender, EventArgs e)
+        {
+            conn.Open();
+            string query_search = "SELECT * FROM hfc.khachhang WHERE " + cmbSearchKH.Text + " like '%" + txtSearchKH.Text + "%'";
+            MySqlCommand command = new MySqlCommand(query_search, conn);
+            command.ExecuteNonQuery();
+            adap = new MySqlDataAdapter(command);
+            mytable = new DataTable();
+            adap.Fill(mytable);
+            conn.Close();
+            dgvKH.DataSource = mytable;
         }
     }
 }
