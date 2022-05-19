@@ -47,7 +47,7 @@ namespace QLHFC.PresentationTier
             }
             DataGridViewImageColumn pic = new DataGridViewImageColumn();
             pic = (DataGridViewImageColumn)dgvThucDon.Columns[3];
-            pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            pic.ImageLayout = DataGridViewImageCellLayout.Stretch;
         }
         private void btnAddFood_Click(object sender, EventArgs e)
         {
