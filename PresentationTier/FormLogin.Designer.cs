@@ -92,9 +92,9 @@
             this.label4.Font = new System.Drawing.Font("Arial", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(3, 11);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(368, 44);
+            this.label4.Size = new System.Drawing.Size(553, 44);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Chưa có tài khoản?";
+            this.label4.Text = "Đăng Ký Tài Khoản Nhân Viên";
             // 
             // btnExit
             // 
