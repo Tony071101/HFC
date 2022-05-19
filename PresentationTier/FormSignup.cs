@@ -30,9 +30,14 @@ namespace QLHFC
             }
             else if (txtPass.Text == txtConfirmPass.Text)
             {
+                MemoryStream ms = new MemoryStream();
+                pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
+                byte[] pt = ms.ToArray();
                 conn.Open();
-                string dangky = "INSERT INTO hfc.nhanvien (TenNV,DiaChiNV,SDT_NV,Username,Password) VALUES ('" + txtName.Text + "','" + txtDiaChi.Text + "','" + txtSDT.Text + "','" + txtUserSignup.Text + "','" + txtPass.Text + "')";
+                string dangky = "INSERT INTO hfc.nhanvien (TenNV,DiaChiNV,SDT_NV,Username,Password,AnhNV) VALUES ('" + txtName.Text + "','" + txtDiaChi.Text + "','" + txtSDT.Text + "','" + txtUserSignup.Text + "','" + txtPass.Text + "', @AnhNV)";
                 MySqlCommand command = new MySqlCommand(dangky, conn);
+                command.Parameters.Add("@AnhNV", MySqlDbType.LongBlob);
+                command.Parameters["@AnhNV"].Value = pt;
                 command.ExecuteNonQuery();
                 conn.Close();
 
@@ -45,6 +50,21 @@ namespace QLHFC
                 txtConfirmPass.Text = "";
                 txtPass.Focus();
             }
+        }
+
+        private void btnPic_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog odf = new OpenFileDialog();
+            odf.Title = "Chọn ảnh";
+            odf.Filter = "Image Files(*.gif;*.jpg;*.jpeg;*.bmp;*.wmf;*.png)|*.gif;*.jpg;*.jpeg;*.bmp;*.wmf;*.png";
+            if (odf.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.ImageLocation = odf.FileName;
+            }
+        }
+        private void dataGridView2_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
         }
     }
 }
