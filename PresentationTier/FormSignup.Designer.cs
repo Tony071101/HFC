@@ -50,6 +50,8 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.txtConfirmPass = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnPic = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -57,6 +59,7 @@
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -161,7 +164,7 @@
             // btnSignup
             // 
             this.btnSignup.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSignup.Location = new System.Drawing.Point(468, 623);
+            this.btnSignup.Location = new System.Drawing.Point(458, 694);
             this.btnSignup.Name = "btnSignup";
             this.btnSignup.Size = new System.Drawing.Size(134, 68);
             this.btnSignup.TabIndex = 7;
@@ -172,7 +175,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCancel.Location = new System.Drawing.Point(608, 623);
+            this.btnCancel.Location = new System.Drawing.Point(598, 694);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(134, 68);
             this.btnCancel.TabIndex = 8;
@@ -260,11 +263,34 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Xác nhận mật khẩu:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox1.Location = new System.Drawing.Point(9, 623);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(303, 139);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnPic
+            // 
+            this.btnPic.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnPic.Location = new System.Drawing.Point(318, 694);
+            this.btnPic.Name = "btnPic";
+            this.btnPic.Size = new System.Drawing.Size(134, 68);
+            this.btnPic.TabIndex = 10;
+            this.btnPic.Text = "Chọn Ảnh";
+            this.btnPic.UseVisualStyleBackColor = true;
+            this.btnPic.Click += new System.EventHandler(this.btnPic_Click);
+            // 
             // FormSignup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(754, 774);
+            this.Controls.Add(this.btnPic);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
@@ -291,6 +317,7 @@
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -319,5 +346,7 @@
         private Panel panel7;
         private TextBox txtConfirmPass;
         private Label label7;
+        private PictureBox pictureBox1;
+        private Button btnPic;
     }
 }
