@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.IO;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace QLHFC.PresentationTier
         public FormThucDon()
         {
             InitializeComponent();
+            this.dgvThucDon.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView2_DataError);
         }
 
         private void FormThucDon_Load(object sender, EventArgs e)
@@ -46,10 +48,14 @@ namespace QLHFC.PresentationTier
         }
         private void btnAddFood_Click(object sender, EventArgs e)
         {
+            MemoryStream ms = new MemoryStream();
+            pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
+            byte[] pt = ms.ToArray();
             conn.Open();
-            string query_insert = "INSERT INTO hfc.thucdon (TenMonAn,Gia) VALUES ('" + txtTenMon.Text + "','" + txtGia.Text + "')";
+            string query_insert = "INSERT INTO hfc.thucdon (TenMonAn,Gia,HinhAnh) VALUES ('" + txtTenMon.Text + "','" + txtGia.Text + "', @HinhAnh)";
             MySqlCommand command = new MySqlCommand(query_insert, conn);
-            command.Parameters.Add("img", MySqlDbType.LongBlob);
+            command.Parameters.Add("@HinhAnh", MySqlDbType.LongBlob);
+            command.Parameters["@HinhAnh"].Value = pt;
             command.ExecuteNonQuery();
             conn.Close();
             Read_Data();
@@ -89,6 +95,15 @@ namespace QLHFC.PresentationTier
             txtIDMon.Text = Convert.ToString(row.Cells["ID_MonAn"].Value);
             txtTenMon.Text = Convert.ToString(row.Cells["TenMonAn"].Value);
             txtGia.Text = Convert.ToString(row.Cells["Gia"].Value);
+            if (Convert.ToString(row.Cells["HinhAnh"].Value) != "")
+            {
+                MemoryStream ms = new MemoryStream((byte[])row.Cells["HinhAnh"].Value);
+                pictureBox1.Image = Image.FromStream(ms);
+            }
+            else
+            {
+                pictureBox1.Image=null;
+            }
         }
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
@@ -101,6 +116,34 @@ namespace QLHFC.PresentationTier
             adap.Fill(mytable);
             conn.Close();
             dgvThucDon.DataSource = mytable;
+        }
+
+        private void btnPicture_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog odf = new OpenFileDialog();
+            odf.Title = "Chọn ảnh";
+            odf.Filter = "Image Files(*.gif;*.jpg;*.jpeg;*.bmp;*.wmf;*.png)|*.gif;*.jpg;*.jpeg;*.bmp;*.wmf;*.png";
+            if (odf.ShowDialog()== DialogResult.OK)
+            {
+                pictureBox1.ImageLocation = odf.FileName;
+            }
+            //PictureBox pt = new PictureBox();
+            //int r = dgvThucDon.CurrentCell.RowIndex;
+            //if (odf.ShowDialog() == DialogResult.OK)
+            //{
+            //    pt.Image = new Bitmap(odf.FileName);
+            //    MemoryStream mms = new MemoryStream();
+            //    pt.Image.Save(mms, pt.Image.RawFormat);
+            //    dgvThucDon.Rows[r].Cells[3].Value = mms.ToArray();
+            //}
+            //else
+            //{
+            //    dgvThucDon.Rows[r].Cells[3].Value = DBNull.Value;
+            //}
+        }
+        private void dataGridView2_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
         }
     }
 }
