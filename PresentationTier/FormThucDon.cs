@@ -45,6 +45,9 @@ namespace QLHFC.PresentationTier
 
                 MessageBox.Show("Lỗi kết nối MySQL.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            DataGridViewImageColumn pic = new DataGridViewImageColumn();
+            pic = (DataGridViewImageColumn)dgvThucDon.Columns[3];
+            pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
         }
         private void btnAddFood_Click(object sender, EventArgs e)
         {
@@ -81,9 +84,14 @@ namespace QLHFC.PresentationTier
         }
         private void btnUpdateFood_Click(object sender, EventArgs e)
         {
+            MemoryStream ms = new MemoryStream();
+            pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
+            byte[] pt = ms.ToArray();
             conn.Open();
-            string query_edit = "UPDATE hfc.thucdon SET TenMonAn ='" + txtTenMon.Text + "', Gia ='" + txtGia.Text + "' WHERE ID_MonAn = '" + int.Parse(txtIDMon.Text) + "'";
+            string query_edit = "UPDATE hfc.thucdon SET TenMonAn ='" + txtTenMon.Text + "', Gia ='" + txtGia.Text + "', HinhAnh = @HinhAnh WHERE ID_MonAn = '" + int.Parse(txtIDMon.Text) + "'";
             MySqlCommand command = new MySqlCommand(query_edit, conn);
+            command.Parameters.Add("@HinhAnh", MySqlDbType.LongBlob);
+            command.Parameters["@HinhAnh"].Value = pt;
             command.ExecuteNonQuery();
             conn.Close();
             Read_Data();
