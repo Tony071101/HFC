@@ -47,12 +47,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnPic = new System.Windows.Forms.Button();
             this.pnlNhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlNhanVien
             // 
+            this.pnlNhanVien.Controls.Add(this.btnPic);
+            this.pnlNhanVien.Controls.Add(this.pictureBox1);
             this.pnlNhanVien.Controls.Add(this.cmbSearch);
             this.pnlNhanVien.Controls.Add(this.txtSearch);
             this.pnlNhanVien.Controls.Add(this.btnDel);
@@ -93,7 +98,7 @@
             "SDT_NV",
             "Username",
             "Password"});
-            this.cmbSearch.Location = new System.Drawing.Point(516, 237);
+            this.cmbSearch.Location = new System.Drawing.Point(567, 172);
             this.cmbSearch.Name = "cmbSearch";
             this.cmbSearch.Size = new System.Drawing.Size(97, 28);
             this.cmbSearch.TabIndex = 17;
@@ -102,15 +107,15 @@
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSearch.Location = new System.Drawing.Point(619, 237);
+            this.txtSearch.Location = new System.Drawing.Point(670, 172);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(432, 34);
+            this.txtSearch.Size = new System.Drawing.Size(381, 34);
             this.txtSearch.TabIndex = 15;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(201, 230);
+            this.btnDel.Location = new System.Drawing.Point(803, 212);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(121, 54);
             this.btnDel.TabIndex = 14;
@@ -120,7 +125,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(386, 230);
+            this.btnEdit.Location = new System.Drawing.Point(930, 212);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(121, 54);
             this.btnEdit.TabIndex = 13;
@@ -132,9 +137,9 @@
             // 
             this.txtPassword_NV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword_NV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPassword_NV.Location = new System.Drawing.Point(619, 158);
+            this.txtPassword_NV.Location = new System.Drawing.Point(773, 132);
             this.txtPassword_NV.Name = "txtPassword_NV";
-            this.txtPassword_NV.Size = new System.Drawing.Size(432, 34);
+            this.txtPassword_NV.Size = new System.Drawing.Size(278, 34);
             this.txtPassword_NV.TabIndex = 12;
             // 
             // dgvNV
@@ -143,11 +148,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNV.Location = new System.Drawing.Point(0, 311);
+            this.dgvNV.Location = new System.Drawing.Point(0, 272);
             this.dgvNV.Name = "dgvNV";
             this.dgvNV.RowHeadersWidth = 51;
             this.dgvNV.RowTemplate.Height = 29;
-            this.dgvNV.Size = new System.Drawing.Size(1051, 361);
+            this.dgvNV.Size = new System.Drawing.Size(1051, 400);
             this.dgvNV.TabIndex = 0;
             this.dgvNV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -155,44 +160,44 @@
             // 
             this.txtUsername_NV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUsername_NV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtUsername_NV.Location = new System.Drawing.Point(619, 86);
+            this.txtUsername_NV.Location = new System.Drawing.Point(774, 73);
             this.txtUsername_NV.Name = "txtUsername_NV";
-            this.txtUsername_NV.Size = new System.Drawing.Size(432, 34);
+            this.txtUsername_NV.Size = new System.Drawing.Size(277, 34);
             this.txtUsername_NV.TabIndex = 11;
             // 
             // txtSDT_NV
             // 
             this.txtSDT_NV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSDT_NV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSDT_NV.Location = new System.Drawing.Point(564, 21);
+            this.txtSDT_NV.Location = new System.Drawing.Point(727, 11);
             this.txtSDT_NV.Name = "txtSDT_NV";
-            this.txtSDT_NV.Size = new System.Drawing.Size(487, 34);
+            this.txtSDT_NV.Size = new System.Drawing.Size(324, 34);
             this.txtSDT_NV.TabIndex = 10;
             // 
             // txtAddress_NV
             // 
             this.txtAddress_NV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAddress_NV.Location = new System.Drawing.Point(85, 158);
+            this.txtAddress_NV.Location = new System.Drawing.Point(412, 132);
             this.txtAddress_NV.Name = "txtAddress_NV";
-            this.txtAddress_NV.Size = new System.Drawing.Size(422, 34);
+            this.txtAddress_NV.Size = new System.Drawing.Size(252, 34);
             this.txtAddress_NV.TabIndex = 9;
             // 
             // txtName_NV
             // 
             this.txtName_NV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName_NV.Location = new System.Drawing.Point(85, 86);
+            this.txtName_NV.Location = new System.Drawing.Point(410, 73);
             this.txtName_NV.Name = "txtName_NV";
-            this.txtName_NV.Size = new System.Drawing.Size(422, 34);
+            this.txtName_NV.Size = new System.Drawing.Size(254, 34);
             this.txtName_NV.TabIndex = 8;
             // 
             // txtID_NV
             // 
             this.txtID_NV.BackColor = System.Drawing.Color.Silver;
             this.txtID_NV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtID_NV.Location = new System.Drawing.Point(44, 21);
+            this.txtID_NV.Location = new System.Drawing.Point(369, 11);
             this.txtID_NV.Name = "txtID_NV";
             this.txtID_NV.ReadOnly = true;
-            this.txtID_NV.Size = new System.Drawing.Size(463, 34);
+            this.txtID_NV.Size = new System.Drawing.Size(295, 34);
             this.txtID_NV.TabIndex = 7;
             // 
             // label4
@@ -200,7 +205,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(516, 158);
+            this.label4.Location = new System.Drawing.Point(670, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 28);
             this.label4.TabIndex = 6;
@@ -211,7 +216,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(516, 86);
+            this.label5.Location = new System.Drawing.Point(670, 76);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 28);
             this.label5.TabIndex = 5;
@@ -222,7 +227,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(516, 21);
+            this.label6.Location = new System.Drawing.Point(670, 14);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 28);
             this.label6.TabIndex = 4;
@@ -232,7 +237,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(3, 158);
+            this.label3.Location = new System.Drawing.Point(328, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 28);
             this.label3.TabIndex = 3;
@@ -242,7 +247,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(3, 86);
+            this.label2.Location = new System.Drawing.Point(328, 76);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 28);
             this.label2.TabIndex = 2;
@@ -252,7 +257,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(3, 21);
+            this.label1.Location = new System.Drawing.Point(328, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 28);
             this.label1.TabIndex = 1;
@@ -260,13 +265,33 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(3, 230);
+            this.btnAdd.Location = new System.Drawing.Point(676, 212);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(121, 54);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox1.Location = new System.Drawing.Point(70, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(252, 255);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnPic
+            // 
+            this.btnPic.Location = new System.Drawing.Point(3, 11);
+            this.btnPic.Name = "btnPic";
+            this.btnPic.Size = new System.Drawing.Size(61, 255);
+            this.btnPic.TabIndex = 19;
+            this.btnPic.Text = "Chọn Hình";
+            this.btnPic.UseVisualStyleBackColor = true;
+            this.btnPic.Click += new System.EventHandler(this.btnPic_Click);
             // 
             // FormNV
             // 
@@ -282,6 +307,7 @@
             this.pnlNhanVien.ResumeLayout(false);
             this.pnlNhanVien.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -307,5 +333,7 @@
         private Button btnAdd;
         private TextBox txtSearch;
         private ComboBox cmbSearch;
+        private Button btnPic;
+        private PictureBox pictureBox1;
     }
 }
