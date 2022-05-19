@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPicture = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtSearchMonAn = new System.Windows.Forms.TextBox();
             this.cmbSearchMonAn = new System.Windows.Forms.ComboBox();
             this.txtGia = new System.Windows.Forms.TextBox();
@@ -43,11 +46,14 @@
             this.dgvThucDon = new System.Windows.Forms.DataGridView();
             this.mySqlDataAdapter1 = new MySqlConnector.MySqlDataAdapter();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThucDon)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnPicture);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.txtSearchMonAn);
             this.panel1.Controls.Add(this.cmbSearchMonAn);
             this.panel1.Controls.Add(this.txtGia);
@@ -66,11 +72,30 @@
             this.panel1.Size = new System.Drawing.Size(1055, 678);
             this.panel1.TabIndex = 0;
             // 
+            // btnPicture
+            // 
+            this.btnPicture.Location = new System.Drawing.Point(872, 49);
+            this.btnPicture.Name = "btnPicture";
+            this.btnPicture.Size = new System.Drawing.Size(143, 50);
+            this.btnPicture.TabIndex = 21;
+            this.btnPicture.Text = "Thêm Hình ảnh";
+            this.btnPicture.UseVisualStyleBackColor = true;
+            this.btnPicture.Click += new System.EventHandler(this.btnPicture_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(570, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(259, 131);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            // 
             // txtSearchMonAn
             // 
             this.txtSearchMonAn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchMonAn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSearchMonAn.Location = new System.Drawing.Point(673, 12);
+            this.txtSearchMonAn.Location = new System.Drawing.Point(673, 149);
             this.txtSearchMonAn.Name = "txtSearchMonAn";
             this.txtSearchMonAn.Size = new System.Drawing.Size(370, 34);
             this.txtSearchMonAn.TabIndex = 19;
@@ -83,7 +108,7 @@
             "ID_MonAn",
             "TenMonAn",
             "Gia"});
-            this.cmbSearchMonAn.Location = new System.Drawing.Point(570, 12);
+            this.cmbSearchMonAn.Location = new System.Drawing.Point(570, 149);
             this.cmbSearchMonAn.Name = "cmbSearchMonAn";
             this.cmbSearchMonAn.Size = new System.Drawing.Size(97, 28);
             this.cmbSearchMonAn.TabIndex = 18;
@@ -146,7 +171,7 @@
             // 
             // btnUpdateFood
             // 
-            this.btnUpdateFood.Location = new System.Drawing.Point(936, 81);
+            this.btnUpdateFood.Location = new System.Drawing.Point(405, 138);
             this.btnUpdateFood.Name = "btnUpdateFood";
             this.btnUpdateFood.Size = new System.Drawing.Size(107, 48);
             this.btnUpdateFood.TabIndex = 4;
@@ -156,7 +181,7 @@
             // 
             // btnDelFood
             // 
-            this.btnDelFood.Location = new System.Drawing.Point(758, 81);
+            this.btnDelFood.Location = new System.Drawing.Point(211, 138);
             this.btnDelFood.Name = "btnDelFood";
             this.btnDelFood.Size = new System.Drawing.Size(104, 48);
             this.btnDelFood.TabIndex = 3;
@@ -166,7 +191,7 @@
             // 
             // btnAddFood
             // 
-            this.btnAddFood.Location = new System.Drawing.Point(573, 81);
+            this.btnAddFood.Location = new System.Drawing.Point(12, 138);
             this.btnAddFood.Name = "btnAddFood";
             this.btnAddFood.Size = new System.Drawing.Size(114, 48);
             this.btnAddFood.TabIndex = 2;
@@ -181,7 +206,10 @@
             this.dgvThucDon.Location = new System.Drawing.Point(12, 198);
             this.dgvThucDon.Name = "dgvThucDon";
             this.dgvThucDon.RowHeadersWidth = 51;
-            this.dgvThucDon.RowTemplate.Height = 29;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvThucDon.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvThucDon.RowTemplate.Height = 70;
+            this.dgvThucDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvThucDon.Size = new System.Drawing.Size(1031, 468);
             this.dgvThucDon.TabIndex = 0;
             this.dgvThucDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThucDon_CellContentClick);
@@ -207,6 +235,7 @@
             this.Load += new System.EventHandler(this.FormThucDon_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThucDon)).EndInit();
             this.ResumeLayout(false);
 
@@ -228,5 +257,7 @@
         private Label label1;
         private ComboBox cmbSearchMonAn;
         private TextBox txtSearchMonAn;
+        private Button btnPicture;
+        private PictureBox pictureBox1;
     }
 }
