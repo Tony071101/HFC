@@ -42,9 +42,10 @@ namespace QLHFC
                 txtUsername.Text = "";
                 txtPassword.Text = "";
                 txtUsername.Focus();
+                this.Show();
             }
             conn.Close();
-            this.Hide();
+            this.Show();
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
