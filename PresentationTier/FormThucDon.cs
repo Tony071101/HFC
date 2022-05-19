@@ -135,19 +135,6 @@ namespace QLHFC.PresentationTier
             {
                 pictureBox1.ImageLocation = odf.FileName;
             }
-            //PictureBox pt = new PictureBox();
-            //int r = dgvThucDon.CurrentCell.RowIndex;
-            //if (odf.ShowDialog() == DialogResult.OK)
-            //{
-            //    pt.Image = new Bitmap(odf.FileName);
-            //    MemoryStream mms = new MemoryStream();
-            //    pt.Image.Save(mms, pt.Image.RawFormat);
-            //    dgvThucDon.Rows[r].Cells[3].Value = mms.ToArray();
-            //}
-            //else
-            //{
-            //    dgvThucDon.Rows[r].Cells[3].Value = DBNull.Value;
-            //}
         }
         private void dataGridView2_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
