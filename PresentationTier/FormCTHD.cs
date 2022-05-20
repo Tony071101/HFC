@@ -81,13 +81,14 @@ namespace QLHFC.PresentationTier
             try
             {
                 decimal tongTien = 0;
+                decimal TienGiam = 0;
                 if (txtGiamGia.Text == "0")
                 {
                     tongTien = (decimal)(int.Parse(txtSL.Text) * decimal.Parse(cmbPrice.Text));
                 }
                 else
                 {
-                    tongTien = (decimal)(int.Parse(txtSL.Text) * int.Parse(txtGiamGia.Text) * decimal.Parse(cmbPrice.Text)) / 100;
+                    tongTien = (decimal)(int.Parse(txtSL.Text) * decimal.Parse(cmbPrice.Text)) - (decimal)(int.Parse(txtSL.Text) * decimal.Parse(cmbPrice.Text) * int.Parse(txtGiamGia.Text) / 100);
                 }
                 txtTotal.Text = tongTien.ToString();
             }
