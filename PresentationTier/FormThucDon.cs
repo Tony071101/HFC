@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-
+//Test lưu lên Github
 namespace QLHFC.PresentationTier
 {
     public partial class FormThucDon : Form
