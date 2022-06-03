@@ -58,11 +58,7 @@ namespace QLHFC.PresentationTier
         private void FormMenu_Load(object sender, EventArgs e)
         {
             toolStripStatusLabel1.Text = "Welcome to Hutech Fried Chicken";
-            if (Username == "admin")
-            {
-                
-            }
-            else
+            if (Password != "admin")
             {
                 nHÂNVIÊNToolStripMenuItem.Enabled = false;
                 tHỰCĐƠNToolStripMenuItem.Enabled = false;
