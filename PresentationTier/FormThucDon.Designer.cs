@@ -204,12 +204,19 @@
             // 
             this.dgvThucDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvThucDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThucDon.GridColor = System.Drawing.SystemColors.ButtonShadow;
             this.dgvThucDon.Location = new System.Drawing.Point(12, 198);
             this.dgvThucDon.Name = "dgvThucDon";
             this.dgvThucDon.RowHeadersWidth = 51;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dgvThucDon.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvThucDon.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvThucDon.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.dgvThucDon.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvThucDon.RowTemplate.Height = 70;
+            this.dgvThucDon.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvThucDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvThucDon.Size = new System.Drawing.Size(1031, 468);
             this.dgvThucDon.TabIndex = 0;
