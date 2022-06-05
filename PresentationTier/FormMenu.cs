@@ -28,7 +28,6 @@ namespace QLHFC.PresentationTier
             this.SDT_NV = SDT_NV;
             this.Username = Username;
             this.Password = Password;
-            
         }
         private void hÓAĐƠNToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -44,6 +43,7 @@ namespace QLHFC.PresentationTier
         }
         private void nHÂNVIÊNToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             FormNV f = new FormNV();
             f.MdiParent = this;
             f.Show();
