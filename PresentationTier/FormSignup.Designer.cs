@@ -181,6 +181,7 @@
             this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Thoát";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // panel5
             // 
@@ -303,6 +304,7 @@
             this.Name = "FormSignup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormSignup";
+            this.Load += new System.EventHandler(this.FormSignup_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
