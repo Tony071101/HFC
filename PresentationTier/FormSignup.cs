@@ -24,31 +24,38 @@ namespace QLHFC
         }
         private void btnSignup_Click(object sender, EventArgs e)
         {
-            if (txtName.Text == "" && txtUserSignup.Text == "" && txtPass.Text == "" && txtDiaChi.Text == "" && txtSDT.Text == "")
+            try
             {
-                MessageBox.Show("Vui lòng nhập các dòng trên.", "Đăng ký không thành công.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (txtPass.Text == txtConfirmPass.Text)
-            {
-                MemoryStream ms = new MemoryStream();
-                pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
-                byte[] pt = ms.ToArray();
-                conn.Open();
-                string dangky = "INSERT INTO hfc.nhanvien (TenNV,DiaChiNV,SDT_NV,Username,Password,AnhNV) VALUES ('" + txtName.Text + "','" + txtDiaChi.Text + "','" + txtSDT.Text + "','" + txtUserSignup.Text + "','" + txtPass.Text + "', @AnhNV)";
-                MySqlCommand command = new MySqlCommand(dangky, conn);
-                command.Parameters.Add("@AnhNV", MySqlDbType.LongBlob);
-                command.Parameters["@AnhNV"].Value = pt;
-                command.ExecuteNonQuery();
-                conn.Close();
+                if (txtName.Text == "" && txtUserSignup.Text == "" && txtPass.Text == "" && txtDiaChi.Text == "" && txtSDT.Text == "")
+                {
+                    MessageBox.Show("Vui lòng nhập các dòng trên.", "Đăng ký không thành công.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (txtPass.Text == txtConfirmPass.Text)
+                {
+                    MemoryStream ms = new MemoryStream();
+                    pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
+                    byte[] pt = ms.ToArray();
+                    conn.Open();
+                    string dangky = "INSERT INTO hfc.nhanvien (TenNV,DiaChiNV,SDT_NV,Username,Password,AnhNV) VALUES ('" + txtName.Text + "','" + txtDiaChi.Text + "','" + txtSDT.Text + "','" + txtUserSignup.Text + "','" + txtPass.Text + "', @AnhNV)";
+                    MySqlCommand command = new MySqlCommand(dangky, conn);
+                    command.Parameters.Add("@AnhNV", MySqlDbType.LongBlob);
+                    command.Parameters["@AnhNV"].Value = pt;
+                    command.ExecuteNonQuery();
+                    conn.Close();
 
-                MessageBox.Show("Tài khoản nhân viên đã đăng ký thành công","Đăng ký thành công.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Tài khoản nhân viên đã đăng ký thành công", "Đăng ký thành công.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Xác nhận mật khẩu không thành công", "Đăng ký không thành công.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPass.Text = "";
+                    txtConfirmPass.Text = "";
+                    txtPass.Focus();
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Xác nhận mật khẩu không thành công", "Đăng ký không thành công.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtPass.Text = "";
-                txtConfirmPass.Text = "";
-                txtPass.Focus();
+                MessageBox.Show("Nhân viên đăng ký tài khoản phải có hình ảnh", "Quy định", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -65,6 +72,18 @@ namespace QLHFC
         private void dataGridView2_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             e.Cancel = true;
+        }
+
+        private void FormSignup_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("Nhân viên đăng ký tài khoản phải có hình ảnh", "Quy định", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            FormLogin f = new FormLogin();
+            f.Show();
+            this.Close();
         }
     }
 }
