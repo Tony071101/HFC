@@ -49,6 +49,7 @@ namespace QLHFC.PresentationTier
             DataGridViewImageColumn pic = new DataGridViewImageColumn();
             pic = (DataGridViewImageColumn)dgvThucDon.Columns[3];
             pic.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            pic.Visible = false;
         }
         private void btnAddFood_Click(object sender, EventArgs e)
         {
@@ -106,8 +107,8 @@ namespace QLHFC.PresentationTier
             txtGia.Text = Convert.ToString(row.Cells["Gia"].Value);
             if (Convert.ToString(row.Cells["HinhAnh"].Value) != "")
             {
-                MemoryStream ms = new MemoryStream((byte[])row.Cells["HinhAnh"].Value);
-                pictureBox1.Image = Image.FromStream(ms);
+                MemoryStream pic = new MemoryStream((byte[])row.Cells["HinhAnh"].Value);
+                pictureBox1.Image = Image.FromStream(pic);
             }
             else
             {
