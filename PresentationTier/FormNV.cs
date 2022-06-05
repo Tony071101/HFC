@@ -45,6 +45,7 @@ namespace QLHFC.PresentationTier
             pic = (DataGridViewImageColumn)dgvNV.Columns[6];
             pic.ImageLayout = DataGridViewImageCellLayout.Stretch;
             pic.Visible = false;
+            MessageBox.Show("Nhân viên khi thêm phải có hình ảnh", "Quy định", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
