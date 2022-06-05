@@ -50,6 +50,7 @@ namespace QLHFC.PresentationTier
             pic = (DataGridViewImageColumn)dgvThucDon.Columns[3];
             pic.ImageLayout = DataGridViewImageCellLayout.Stretch;
             pic.Visible = false;
+            MessageBox.Show("Vui lòng chọn hình khi thêm 1 món ăn", "Quy định", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
         private void btnAddFood_Click(object sender, EventArgs e)
         {
@@ -63,7 +64,7 @@ namespace QLHFC.PresentationTier
             command.Parameters["@HinhAnh"].Value = pt;
             command.ExecuteNonQuery();
             conn.Close();
-            Read_Data();
+            Read_Data(); 
         }
         private void Read_Data()
         {
