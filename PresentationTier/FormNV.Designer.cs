@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlNhanVien = new System.Windows.Forms.Panel();
+            this.btnPic = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbSearch = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnDel = new System.Windows.Forms.Button();
@@ -47,11 +49,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnPic = new System.Windows.Forms.Button();
             this.pnlNhanVien.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlNhanVien
@@ -80,6 +80,26 @@
             this.pnlNhanVien.Name = "pnlNhanVien";
             this.pnlNhanVien.Size = new System.Drawing.Size(1061, 675);
             this.pnlNhanVien.TabIndex = 3;
+            // 
+            // btnPic
+            // 
+            this.btnPic.Location = new System.Drawing.Point(3, 11);
+            this.btnPic.Name = "btnPic";
+            this.btnPic.Size = new System.Drawing.Size(61, 255);
+            this.btnPic.TabIndex = 19;
+            this.btnPic.Text = "Chọn Hình";
+            this.btnPic.UseVisualStyleBackColor = true;
+            this.btnPic.Click += new System.EventHandler(this.btnPic_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox1.Location = new System.Drawing.Point(70, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(252, 255);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
             // 
             // cmbSearch
             // 
@@ -151,7 +171,7 @@
             this.dgvNV.Location = new System.Drawing.Point(0, 272);
             this.dgvNV.Name = "dgvNV";
             this.dgvNV.RowHeadersWidth = 51;
-            this.dgvNV.RowTemplate.Height = 29;
+            this.dgvNV.RowTemplate.Height = 30;
             this.dgvNV.Size = new System.Drawing.Size(1051, 400);
             this.dgvNV.TabIndex = 0;
             this.dgvNV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -273,26 +293,6 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox1.Location = new System.Drawing.Point(70, 11);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(252, 255);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnPic
-            // 
-            this.btnPic.Location = new System.Drawing.Point(3, 11);
-            this.btnPic.Name = "btnPic";
-            this.btnPic.Size = new System.Drawing.Size(61, 255);
-            this.btnPic.TabIndex = 19;
-            this.btnPic.Text = "Chọn Hình";
-            this.btnPic.UseVisualStyleBackColor = true;
-            this.btnPic.Click += new System.EventHandler(this.btnPic_Click);
-            // 
             // FormNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -306,8 +306,8 @@
             this.Load += new System.EventHandler(this.FormNV_Load);
             this.pnlNhanVien.ResumeLayout(false);
             this.pnlNhanVien.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).EndInit();
             this.ResumeLayout(false);
 
         }
