@@ -44,6 +44,7 @@ namespace QLHFC.PresentationTier
             DataGridViewImageColumn pic = new DataGridViewImageColumn();
             pic = (DataGridViewImageColumn)dgvNV.Columns[6];
             pic.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            pic.Visible = false;
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
