@@ -13,6 +13,7 @@ namespace QLHFC.PresentationTier
 {
     public partial class FormNV : Form
     {
+        //Khai báo và kết nối MySQL
         MySqlConnection conn;
         MySqlCommandBuilder cmd;
         MySqlDataAdapter adap;
@@ -25,6 +26,7 @@ namespace QLHFC.PresentationTier
         }
         private void FormNV_Load(object sender, EventArgs e)
         {
+            //Show database
             try
             {
                 conn = new MySqlConnection(strconn);
@@ -47,6 +49,7 @@ namespace QLHFC.PresentationTier
             pic.Visible = false;
             MessageBox.Show("Nhân viên khi thêm phải có hình ảnh", "Quy định", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+        //Hàm thêm
         private void btnAdd_Click(object sender, EventArgs e)
         {
             MemoryStream ms = new MemoryStream();
@@ -61,6 +64,7 @@ namespace QLHFC.PresentationTier
             conn.Close();
             Read_Data();
         }
+        //Cập nhật dữ liệu tức thời
         private void Read_Data()
         {
             conn.Open();
@@ -71,6 +75,7 @@ namespace QLHFC.PresentationTier
             conn.Close();
             dgvNV.DataSource = mytable;
         }
+        //Hàm sửa
         private void btnEdit_Click(object sender, EventArgs e)
         {
             MemoryStream ms = new MemoryStream();
@@ -85,6 +90,7 @@ namespace QLHFC.PresentationTier
             conn.Close();
             Read_Data();
         }
+        //Hàm xóa
         private void btnDel_Click(object sender, EventArgs e)
         {
             conn.Open();
@@ -94,6 +100,7 @@ namespace QLHFC.PresentationTier
             conn.Close();
             Read_Data();
         }
+        //Đọc dữ liệu từ datagirdview ra textbox/combobox/picturebox
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();
@@ -114,6 +121,7 @@ namespace QLHFC.PresentationTier
                 pictureBox1.Image = null;
             }
         }
+        //Hàm tìm kiếm
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             conn.Open();
@@ -126,7 +134,7 @@ namespace QLHFC.PresentationTier
             conn.Close();
             dgvNV.DataSource = mytable;
         }
-
+        //Chọn hình ảnh
         private void btnPic_Click(object sender, EventArgs e)
         {
             OpenFileDialog odf = new OpenFileDialog();
@@ -137,6 +145,7 @@ namespace QLHFC.PresentationTier
                 pictureBox1.ImageLocation = odf.FileName;
             }
         }
+        //Khi chèn hình vào database, code sẽ hiện khung lỗi không cho thao tác tiếp, code này để tắt lỗi đó
         private void dataGridView2_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             e.Cancel = true;
