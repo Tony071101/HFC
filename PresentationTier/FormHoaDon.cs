@@ -13,6 +13,7 @@ namespace QLHFC.PresentationTier
 {
     public partial class FormHoaDon : Form
     {
+        //Khai báo và kết nối MySQL
         MySqlConnection conn;
         MySqlCommandBuilder cmd;
         MySqlDataAdapter adap;
@@ -27,6 +28,7 @@ namespace QLHFC.PresentationTier
         }
         private void FormHoaDon_Load(object sender, EventArgs e)
         {
+            //Show database
             txtDate.Text = DateTime.Now.ToString("dd-MM-yyyy H:mm");
             try
             {
@@ -58,6 +60,7 @@ namespace QLHFC.PresentationTier
                 MessageBox.Show("Lỗi kết nối MySQL.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //Cập nhật dữ liệu tức thời
         private void Read_Data()
         {
             conn.Open();
@@ -68,6 +71,7 @@ namespace QLHFC.PresentationTier
             conn.Close();
             dgvHD.DataSource = mytable;
         }
+        //Hàm thêm
         private void btnCreateHoaDon_Click(object sender, EventArgs e)
         {
             try
@@ -84,6 +88,7 @@ namespace QLHFC.PresentationTier
                 MessageBox.Show("Lỗi kết nối MySQL.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //Hàm xóa
         private void btnDelHD_Click(object sender, EventArgs e)
         {
             conn.Open();
@@ -93,6 +98,7 @@ namespace QLHFC.PresentationTier
             conn.Close();
             Read_Data();
         }
+        //Hàm sửa
         private void btnUpdateHD_Click(object sender, EventArgs e)
         {
             conn.Open();
@@ -102,6 +108,7 @@ namespace QLHFC.PresentationTier
             conn.Close();
             Read_Data();
         }
+        //Đọc dữ liệu từ datagridview ra textbox/combobox/picturebox
         private void dgvHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();
@@ -111,11 +118,13 @@ namespace QLHFC.PresentationTier
             cmbNV.Text = Convert.ToString(row.Cells["TenNV"].Value);
             Read_Data();
         }
+        //Mở FormCTHD
         private void button1_Click(object sender, EventArgs e)
         {
                 FormCTHD f = new FormCTHD();
                 f.Show();
         }
+        //Hàm tìm kiếm
         private void txtSearchHD_TextChanged(object sender, EventArgs e)
         {
             conn.Open();
@@ -128,6 +137,7 @@ namespace QLHFC.PresentationTier
             conn.Close();
             dgvHD.DataSource = mytable;
         }
+        //Hàm in
         private void btnPrint_Click(object sender, EventArgs e)
         {
             printPreviewDialog1.Document = printDocument1;
