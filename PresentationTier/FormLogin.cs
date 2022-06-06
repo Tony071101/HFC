@@ -6,6 +6,7 @@ namespace QLHFC
 {
     public partial class FormLogin : Form
     {
+        //Khai báo MySQL
         MySqlConnection conn = new MySqlConnection("Server = localhost; Port = 3306; Database = hfc; UId = root; Pwd = bjergsen07112001");
         MySqlCommandBuilder cmd = new MySqlCommandBuilder();
         MySqlDataAdapter adap = new MySqlDataAdapter();
@@ -16,6 +17,7 @@ namespace QLHFC
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            //Đăng nhập 
             FormMenu f;
             conn.Open();
             string dangnhap = "SELECT * FROM hfc.nhanvien WHERE Username= '" + txtUsername.Text + "' and Password = '" + txtPassword.Text + "'";
