@@ -13,6 +13,7 @@ namespace QLHFC.PresentationTier
 {
     public partial class FormKH : Form
     {
+        //Khai báo và kết nối MySQL
         MySqlConnection conn;
         MySqlCommandBuilder cmd;
         MySqlDataAdapter adap;
@@ -25,6 +26,7 @@ namespace QLHFC.PresentationTier
         }
         private void FormKH_Load(object sender, EventArgs e)
         {
+            //Show database
             try
             {
                 conn = new MySqlConnection(strconn);
@@ -42,6 +44,7 @@ namespace QLHFC.PresentationTier
                 MessageBox.Show("Lỗi kết nối MySQL.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //Hàm thêm
         private void btnAddKH_Click(object sender, EventArgs e)
         {
             conn.Open();
@@ -51,6 +54,7 @@ namespace QLHFC.PresentationTier
             conn.Close();
             Read_Data();
         }
+        //Hàm xóa
         private void btnDelKH_Click(object sender, EventArgs e)
         {
             conn.Open();
@@ -60,6 +64,7 @@ namespace QLHFC.PresentationTier
             conn.Close();
             Read_Data();
         }
+        //Hàm sửa
         private void btnEditKH_Click(object sender, EventArgs e)
         {
             conn.Open();
@@ -69,6 +74,7 @@ namespace QLHFC.PresentationTier
             conn.Close();
             Read_Data();
         }
+        //Cập nhật dữ liệu tức thời
         private void Read_Data()
         {
             conn.Open();
@@ -79,6 +85,7 @@ namespace QLHFC.PresentationTier
             conn.Close();
             dgvKH.DataSource = mytable;
         }
+        //Đọc dữ liệu từ datagridview ra textbox/combobox/picturebox
         private void dgvKH_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();
@@ -88,6 +95,7 @@ namespace QLHFC.PresentationTier
             txtDiaChiKH.Text = Convert.ToString(row.Cells["DiaChiKH"].Value);
             txtSDT_KH.Text = Convert.ToString(row.Cells["SDT_KH"].Value);
         }
+        //Hàm tìm kiếm
         private void txtSearchKH_TextChanged(object sender, EventArgs e)
         {
             conn.Open();
