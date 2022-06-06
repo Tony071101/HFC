@@ -13,6 +13,7 @@ namespace QLHFC.PresentationTier
 {
     public partial class FormMenu : Form
     {
+        //Khai báo phân quyền
         string TenNV = "", DiaChiNV = "", SDT_NV = "", Username = "", Password = "";
         
         public FormMenu()
@@ -20,6 +21,7 @@ namespace QLHFC.PresentationTier
             InitializeComponent();
 
         }
+        //Constructor
         public FormMenu(String TenNV, String DiaChiNV, String SDT_NV, String Username, String Password)
         {
             InitializeComponent();
@@ -58,6 +60,7 @@ namespace QLHFC.PresentationTier
         private void FormMenu_Load(object sender, EventArgs e)
         {
             toolStripStatusLabel1.Text = "Welcome to Hutech Fried Chicken";
+            //Phân quyền
             if (Password != "admin")
             {
                 nHÂNVIÊNToolStripMenuItem.Enabled = false;
