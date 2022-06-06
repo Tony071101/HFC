@@ -13,6 +13,7 @@ namespace QLHFC.PresentationTier
 {
     public partial class FormCTHD : Form
     {
+        //khai báo và kết nối MySQL
         MySqlConnection conn;
         MySqlCommandBuilder cmd;
         MySqlDataAdapter adap;
@@ -28,6 +29,7 @@ namespace QLHFC.PresentationTier
 
         private void FormCTHD_Load(object sender, EventArgs e)
         {
+            //Show Database
             conn = new MySqlConnection(strconn);
             conn.Open();
             adap = new MySqlDataAdapter(query_select, conn);
@@ -55,6 +57,7 @@ namespace QLHFC.PresentationTier
             dgvCTHD.DataSource = mytable;
             txtGiamGia.Text = "0";
         }
+        //Cập nhật dữ liệu tức thời
         private void Read_Data()
         {
             conn.Open();
@@ -65,6 +68,7 @@ namespace QLHFC.PresentationTier
             conn.Close();
             dgvCTHD.DataSource = mytable;
         }
+        //Hàm thêm
         private void btnAddCTHD_Click(object sender, EventArgs e)
         {
             conn.Open();
@@ -76,12 +80,12 @@ namespace QLHFC.PresentationTier
             conn.Close();
             Read_Data();
         }
+        //Hàm tính khuyến mãi
         private void cmbPrice_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
                 decimal tongTien = 0;
-                decimal TienGiam = 0;
                 if (txtGiamGia.Text == "0")
                 {
                     tongTien = (decimal)(int.Parse(txtSL.Text) * decimal.Parse(cmbPrice.Text));
@@ -97,6 +101,7 @@ namespace QLHFC.PresentationTier
                 MessageBox.Show("Vui lòng nhập Số lượng trước!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //Hàm xóa
         private void btnDelCTHD_Click(object sender, EventArgs e)
         {
             try
@@ -113,6 +118,7 @@ namespace QLHFC.PresentationTier
                 MessageBox.Show("Vui lòng chọn ID Hóa Đơn", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //Hàm in
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             Bitmap bmp = new Bitmap(this.dgvCTHD.Width, this.dgvCTHD.Height);
