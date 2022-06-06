@@ -13,6 +13,7 @@ namespace QLHFC
 {
     public partial class FormSignup : Form
     {
+        //Khai báo và kết nối MySQL
         MySqlConnection conn = new MySqlConnection("Server = localhost; Port = 3306; Database = hfc; UId = root; Pwd = bjergsen07112001");
         MySqlCommandBuilder cmd = new MySqlCommandBuilder();
         MySqlDataAdapter adap = new MySqlDataAdapter();
@@ -24,6 +25,7 @@ namespace QLHFC
         }
         private void btnSignup_Click(object sender, EventArgs e)
         {
+            //Đăng ký
             try
             {
                 if (txtName.Text == "" && txtUserSignup.Text == "" && txtPass.Text == "" && txtDiaChi.Text == "" && txtSDT.Text == "")
@@ -58,7 +60,7 @@ namespace QLHFC
                 MessageBox.Show("Nhân viên đăng ký tài khoản phải có hình ảnh", "Quy định", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
+        //Chọn hình ảnh
         private void btnPic_Click(object sender, EventArgs e)
         {
             OpenFileDialog odf = new OpenFileDialog();
@@ -69,6 +71,7 @@ namespace QLHFC
                 pictureBox1.ImageLocation = odf.FileName;
             }
         }
+        //Khi chèn hình vào database, code sẽ hiện khung lỗi không cho thao tác tiếp, code này để tắt lỗi đó
         private void dataGridView2_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             e.Cancel = true;
