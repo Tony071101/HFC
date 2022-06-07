@@ -45,8 +45,8 @@ namespace QLHFC.PresentationTier
             }
             DataGridViewImageColumn pic = new DataGridViewImageColumn();
             pic = (DataGridViewImageColumn)dgvNV.Columns[6];
-            pic.ImageLayout = DataGridViewImageCellLayout.Stretch;
-            pic.Visible = false;
+            pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            //pic.Visible = false;
             MessageBox.Show("Nhân viên khi thêm phải có hình ảnh", "Quy định", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
         //Hàm thêm
