@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHoaDon));
             this.dgvHD = new System.Windows.Forms.DataGridView();
             this.btnCreateHoaDon = new System.Windows.Forms.Button();
@@ -42,10 +44,10 @@
             this.txtDate = new System.Windows.Forms.TextBox();
             this.cmbKH = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.cmbNV = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
@@ -55,10 +57,20 @@
             // dgvHD
             // 
             this.dgvHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHD.Location = new System.Drawing.Point(3, 177);
             this.dgvHD.Name = "dgvHD";
             this.dgvHD.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvHD.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHD.RowTemplate.Height = 29;
             this.dgvHD.Size = new System.Drawing.Size(1049, 489);
             this.dgvHD.TabIndex = 2;
@@ -201,6 +213,17 @@
             this.panel1.Size = new System.Drawing.Size(1055, 678);
             this.panel1.TabIndex = 1;
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnPrint.Location = new System.Drawing.Point(659, 124);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(127, 52);
+            this.btnPrint.TabIndex = 29;
+            this.btnPrint.Text = "In";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -230,17 +253,6 @@
             this.label4.Size = new System.Drawing.Size(108, 28);
             this.label4.TabIndex = 26;
             this.label4.Text = "Họ Tên NV:";
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnPrint.Location = new System.Drawing.Point(659, 124);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(127, 52);
-            this.btnPrint.TabIndex = 29;
-            this.btnPrint.Text = "In";
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // printDocument1
             // 
