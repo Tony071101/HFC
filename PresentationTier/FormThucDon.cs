@@ -50,8 +50,8 @@ namespace QLHFC.PresentationTier
             }
             DataGridViewImageColumn pic = new DataGridViewImageColumn();
             pic = (DataGridViewImageColumn)dgvThucDon.Columns[3];
-            pic.ImageLayout = DataGridViewImageCellLayout.Stretch;
-            pic.Visible = false;
+            pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            //pic.Visible = false;
             MessageBox.Show("Vui lòng chọn hình khi thêm 1 món ăn", "Quy định", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
         //Hàm thêm
