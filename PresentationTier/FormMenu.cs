@@ -38,6 +38,7 @@ namespace QLHFC.PresentationTier
             f.MdiParent = this;
             f.Show();
         }
+
         private void đĂNGXUẤTToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormLogin f = new FormLogin();
@@ -60,8 +61,8 @@ namespace QLHFC.PresentationTier
         }
         private void FormMenu_Load(object sender, EventArgs e)
         {
-            toolStripStatusLabel1.Text =  "Welcome to Hutech Fried Chicken";
-            toolStripStatusLabel2.Text = Username;
+            toolStripStatusLabel1.Text =  "Chào mừng đến với chương trình, Nhân viên:";
+            toolStripStatusLabel2.Text = TenNV;
             //Phân quyền
             if (Username != "admin")
             {
