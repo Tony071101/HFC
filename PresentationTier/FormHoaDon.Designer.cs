@@ -187,7 +187,7 @@
             this.cmbKH.Location = new System.Drawing.Point(190, 43);
             this.cmbKH.Name = "cmbKH";
             this.cmbKH.Size = new System.Drawing.Size(329, 36);
-            this.cmbKH.TabIndex = 25;
+            this.cmbKH.TabIndex = 1;
             // 
             // panel1
             // 
@@ -242,7 +242,7 @@
             this.cmbNV.Location = new System.Drawing.Point(773, 82);
             this.cmbNV.Name = "cmbNV";
             this.cmbNV.Size = new System.Drawing.Size(279, 36);
-            this.cmbNV.TabIndex = 27;
+            this.cmbNV.TabIndex = 2;
             // 
             // label4
             // 
