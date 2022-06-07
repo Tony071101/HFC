@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSearchKH = new System.Windows.Forms.TextBox();
+            this.cmbSearchKH = new System.Windows.Forms.ComboBox();
             this.txtSDT_KH = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDiaChiKH = new System.Windows.Forms.TextBox();
@@ -41,8 +45,6 @@
             this.dgvKH = new System.Windows.Forms.DataGridView();
             this.txtID_KH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbSearchKH = new System.Windows.Forms.ComboBox();
-            this.txtSearchKH = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +70,36 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1055, 678);
             this.panel1.TabIndex = 0;
+            // 
+            // txtSearchKH
+            // 
+            this.txtSearchKH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchKH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSearchKH.Location = new System.Drawing.Point(664, 212);
+            this.txtSearchKH.Name = "txtSearchKH";
+            this.txtSearchKH.Size = new System.Drawing.Size(379, 34);
+            this.txtSearchKH.TabIndex = 19;
+            this.txtSearchKH.TextChanged += new System.EventHandler(this.txtSearchKH_TextChanged);
+            // 
+            // cmbSearchKH
+            // 
+            this.cmbSearchKH.AutoCompleteCustomSource.AddRange(new string[] {
+            "ID",
+            "Họ Tên",
+            "Địa Chỉ",
+            "SĐT",
+            "Username",
+            "Password"});
+            this.cmbSearchKH.FormattingEnabled = true;
+            this.cmbSearchKH.Items.AddRange(new object[] {
+            "ID_KH",
+            "TenKH",
+            "DiaChiKH",
+            "SDT_KH"});
+            this.cmbSearchKH.Location = new System.Drawing.Point(561, 212);
+            this.cmbSearchKH.Name = "cmbSearchKH";
+            this.cmbSearchKH.Size = new System.Drawing.Size(97, 28);
+            this.cmbSearchKH.TabIndex = 18;
             // 
             // txtSDT_KH
             // 
@@ -157,10 +189,20 @@
             // dgvKH
             // 
             this.dgvKH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvKH.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKH.Location = new System.Drawing.Point(3, 268);
             this.dgvKH.Name = "dgvKH";
             this.dgvKH.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvKH.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvKH.RowTemplate.Height = 29;
             this.dgvKH.Size = new System.Drawing.Size(1049, 398);
             this.dgvKH.TabIndex = 2;
@@ -185,36 +227,6 @@
             this.label1.Size = new System.Drawing.Size(35, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID:";
-            // 
-            // cmbSearchKH
-            // 
-            this.cmbSearchKH.AutoCompleteCustomSource.AddRange(new string[] {
-            "ID",
-            "Họ Tên",
-            "Địa Chỉ",
-            "SĐT",
-            "Username",
-            "Password"});
-            this.cmbSearchKH.FormattingEnabled = true;
-            this.cmbSearchKH.Items.AddRange(new object[] {
-            "ID_KH",
-            "TenKH",
-            "DiaChiKH",
-            "SDT_KH"});
-            this.cmbSearchKH.Location = new System.Drawing.Point(561, 212);
-            this.cmbSearchKH.Name = "cmbSearchKH";
-            this.cmbSearchKH.Size = new System.Drawing.Size(97, 28);
-            this.cmbSearchKH.TabIndex = 18;
-            // 
-            // txtSearchKH
-            // 
-            this.txtSearchKH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchKH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSearchKH.Location = new System.Drawing.Point(664, 212);
-            this.txtSearchKH.Name = "txtSearchKH";
-            this.txtSearchKH.Size = new System.Drawing.Size(379, 34);
-            this.txtSearchKH.TabIndex = 19;
-            this.txtSearchKH.TextChanged += new System.EventHandler(this.txtSearchKH_TextChanged);
             // 
             // FormKH
             // 
