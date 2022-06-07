@@ -29,7 +29,7 @@ namespace QLHFC
             if (dr.Read() == true)
             {
                 if(dt.Rows.Count > 0){
-                    f = new FormMenu(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString(), dt.Rows[0][4].ToString());
+                    f = new FormMenu(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString(), dt.Rows[0][4].ToString(), dt.Rows[0][5].ToString());
                     this.Hide();
                     f.ShowDialog();
                 }
