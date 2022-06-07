@@ -14,7 +14,7 @@ namespace QLHFC.PresentationTier
     public partial class FormMenu : Form
     {
         //Khai báo phân quyền
-        string TenNV = "", DiaChiNV = "", SDT_NV = "", Username = "", Password = "";
+        string ID_NV = "", TenNV = "", DiaChiNV = "", SDT_NV = "", Username = "", Password = "";
         
         public FormMenu()
         {
@@ -22,9 +22,10 @@ namespace QLHFC.PresentationTier
 
         }
         //Constructor
-        public FormMenu(String TenNV, String DiaChiNV, String SDT_NV, String Username, String Password)
+        public FormMenu(String ID_NV, String TenNV, String DiaChiNV, String SDT_NV, String Username, String Password)
         {
             InitializeComponent();
+            this.ID_NV = ID_NV;
             this.TenNV = TenNV;
             this.DiaChiNV = DiaChiNV;
             this.SDT_NV = SDT_NV;
@@ -59,9 +60,10 @@ namespace QLHFC.PresentationTier
         }
         private void FormMenu_Load(object sender, EventArgs e)
         {
-            toolStripStatusLabel1.Text = "Welcome to Hutech Fried Chicken";
+            toolStripStatusLabel1.Text =  "Welcome to Hutech Fried Chicken";
+            toolStripStatusLabel2.Text = Username;
             //Phân quyền
-            if (Password != "admin")
+            if (Username != "admin")
             {
                 nHÂNVIÊNToolStripMenuItem.Enabled = false;
                 tHỰCĐƠNToolStripMenuItem.Enabled = false;
