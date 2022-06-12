@@ -70,7 +70,7 @@
             this.hÓAĐƠNToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("hÓAĐƠNToolStripMenuItem.Image")));
             this.hÓAĐƠNToolStripMenuItem.Name = "hÓAĐƠNToolStripMenuItem";
             this.hÓAĐƠNToolStripMenuItem.Size = new System.Drawing.Size(162, 29);
-            this.hÓAĐƠNToolStripMenuItem.Text = "QL HÓA ĐƠN";
+            this.hÓAĐƠNToolStripMenuItem.Text = "DS HÓA ĐƠN";
             this.hÓAĐƠNToolStripMenuItem.Click += new System.EventHandler(this.hÓAĐƠNToolStripMenuItem_Click);
             // 
             // hÓAĐƠNToolStripMenuItem1
