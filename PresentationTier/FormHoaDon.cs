@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using QLHFC.Classes;
 
 namespace QLHFC.PresentationTier
 {
@@ -29,7 +30,7 @@ namespace QLHFC.PresentationTier
         private void FormHoaDon_Load(object sender, EventArgs e)
         {
             //Show database
-            txtDate.Text = DateTime.Now.ToString("dd-MM-yyyy H:mm");
+            //txtDate.Text = DateTime.Now.ToString("dd-MM-yyyy H:mm");
             try
             {
                 conn = new MySqlConnection(strconn);
@@ -59,6 +60,19 @@ namespace QLHFC.PresentationTier
             {
                 MessageBox.Show("Lỗi kết nối MySQL.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            this.dgvHD.Columns["TenMonAn"].Visible = false;
+            this.dgvHD.Columns["SL"].Visible = false;
+            this.dgvHD.Columns["Gia"].Visible = false;
+            this.dgvHD.Columns["KhuyenMai"].Visible = false;
+            this.dgvHD.Columns["TongTien"].Visible = false;
+            if (UserDetails.UserName != "admin")
+            {
+                btnDelHD.Enabled = false;
+                btnUpdateHD.Enabled = false;
+                btnPrint.Enabled = false;
+                cmbNV.Enabled = false;
+                cmbKH.Enabled = false;
+            }
         }
         //Cập nhật dữ liệu tức thời
         private void Read_Data()
@@ -74,19 +88,19 @@ namespace QLHFC.PresentationTier
         //Hàm thêm
         private void btnCreateHoaDon_Click(object sender, EventArgs e)
         {
-            try
-            {
-                conn.Open();
-                string query_insert = "INSERT INTO hfc.hoadon (TenKH,TenNV,Ngay) VALUES ('" + cmbKH.Text + "','" + cmbNV.Text+ "','" + DateTime.Now.ToString(txtDate.Text) + "')";
-                MySqlCommand command = new MySqlCommand(query_insert, conn);
-                command.ExecuteNonQuery();
-                conn.Close();
-                Read_Data();
-            }
-            catch (MySqlException)
-            {
-                MessageBox.Show("Lỗi kết nối MySQL.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //try
+            //{
+            //    conn.Open();
+            //    string query_insert = "INSERT INTO hfc.hoadon (TenKH,TenNV,Ngay) VALUES ('" + cmbKH.Text + "','" + cmbNV.Text+ "','" + DateTime.Now.ToString(txtDate.Text) + "')";
+            //    MySqlCommand command = new MySqlCommand(query_insert, conn);
+            //    command.ExecuteNonQuery();
+            //    conn.Close();
+            //    Read_Data();
+            //}
+            //catch (MySqlException)
+            //{
+            //    MessageBox.Show("Lỗi kết nối MySQL.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
         //Hàm xóa
         private void btnDelHD_Click(object sender, EventArgs e)
@@ -108,6 +122,7 @@ namespace QLHFC.PresentationTier
             conn.Close();
             Read_Data();
         }
+
         //Đọc dữ liệu từ datagridview ra textbox/combobox/picturebox
         private void dgvHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -116,6 +131,7 @@ namespace QLHFC.PresentationTier
             txtID_HD.Text = Convert.ToString(row.Cells["ID_HD"].Value);
             cmbKH.Text = Convert.ToString(row.Cells["TenKH"].Value);
             cmbNV.Text = Convert.ToString(row.Cells["TenNV"].Value);
+            txtDate.Text = Convert.ToString(row.Cells["Ngay"].Value);
             Read_Data();
         }
         //Mở FormCTHD
@@ -150,7 +166,18 @@ namespace QLHFC.PresentationTier
             e.Graphics.DrawImage(bmp, 0, 120);
             e.Graphics.DrawString("Hóa đơn", new Font("Arial", 40, FontStyle.Bold), Brushes.Red, new Point(300, 30));
             e.Graphics.DrawString("_________________________________________________________", new Font("Arial", 40, FontStyle.Bold), Brushes.Black, new Point(0, 40));
-            e.Graphics.DrawString("Ngày in Hóa đơn: " + txtDate.Text, new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(600, 70));
+            e.Graphics.DrawString("Ngày in Hóa đơn: " + DateTime.Now.ToString("dd-MM-yyy hh:mm"), new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(600, 70));
+            
+        }
+
+        private void txtID_HD_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
