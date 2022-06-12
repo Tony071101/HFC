@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPicture = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -46,6 +46,7 @@
             this.btnAddFood = new System.Windows.Forms.Button();
             this.dgvThucDon = new System.Windows.Forms.DataGridView();
             this.mySqlDataAdapter1 = new MySqlConnector.MySqlDataAdapter();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThucDon)).BeginInit();
@@ -54,6 +55,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btnPicture);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.txtSearchMonAn);
@@ -102,9 +104,9 @@
             this.txtSearchMonAn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchMonAn.BackColor = System.Drawing.Color.Turquoise;
             this.txtSearchMonAn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSearchMonAn.Location = new System.Drawing.Point(673, 149);
+            this.txtSearchMonAn.Location = new System.Drawing.Point(778, 146);
             this.txtSearchMonAn.Name = "txtSearchMonAn";
-            this.txtSearchMonAn.Size = new System.Drawing.Size(370, 34);
+            this.txtSearchMonAn.Size = new System.Drawing.Size(237, 34);
             this.txtSearchMonAn.TabIndex = 19;
             this.txtSearchMonAn.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -116,10 +118,11 @@
             "ID_MonAn",
             "TenMonAn",
             "Gia"});
-            this.cmbSearchMonAn.Location = new System.Drawing.Point(570, 149);
+            this.cmbSearchMonAn.Location = new System.Drawing.Point(680, 146);
             this.cmbSearchMonAn.Name = "cmbSearchMonAn";
-            this.cmbSearchMonAn.Size = new System.Drawing.Size(97, 28);
+            this.cmbSearchMonAn.Size = new System.Drawing.Size(92, 28);
             this.cmbSearchMonAn.TabIndex = 18;
+            this.cmbSearchMonAn.SelectedIndexChanged += new System.EventHandler(this.cmbSearchMonAn_SelectedIndexChanged);
             // 
             // txtGia
             // 
@@ -223,23 +226,23 @@
             // 
             this.dgvThucDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvThucDon.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvThucDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvThucDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvThucDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThucDon.GridColor = System.Drawing.SystemColors.ButtonShadow;
             this.dgvThucDon.Location = new System.Drawing.Point(11, 197);
             this.dgvThucDon.Name = "dgvThucDon";
             this.dgvThucDon.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.dgvThucDon.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dgvThucDon.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvThucDon.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvThucDon.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.dgvThucDon.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
@@ -257,6 +260,16 @@
             this.mySqlDataAdapter1.SelectCommand = null;
             this.mySqlDataAdapter1.UpdateBatchSize = 0;
             this.mySqlDataAdapter1.UpdateCommand = null;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(570, 146);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(104, 28);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Tìm kiếm:";
             // 
             // FormThucDon
             // 
@@ -295,5 +308,6 @@
         private TextBox txtSearchMonAn;
         private Button btnPicture;
         private PictureBox pictureBox1;
+        private Label label4;
     }
 }
