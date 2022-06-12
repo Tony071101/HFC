@@ -39,6 +39,13 @@ namespace QLHFC.PresentationTier
             f.Show();
         }
 
+        private void hÓAĐƠNToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormTaoHD f = new FormTaoHD();
+            f.MdiParent = this;
+            f.Show();
+        }
+
         private void đĂNGXUẤTToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormLogin f = new FormLogin();
@@ -66,6 +73,7 @@ namespace QLHFC.PresentationTier
             //Phân quyền
             if (Username != "admin")
             {
+                hÓAĐƠNToolStripMenuItem.Enabled = false;
                 nHÂNVIÊNToolStripMenuItem.Enabled = false;
                 tHỰCĐƠNToolStripMenuItem.Enabled = false;
             }
