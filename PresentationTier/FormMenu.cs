@@ -73,9 +73,8 @@ namespace QLHFC.PresentationTier
             //Phân quyền
             if (Username != "admin")
             {
-                hÓAĐƠNToolStripMenuItem.Enabled = false;
-                nHÂNVIÊNToolStripMenuItem.Enabled = false;
-                tHỰCĐƠNToolStripMenuItem.Enabled = false;
+                nHÂNVIÊNToolStripMenuItem.Visible = false;
+                tHỰCĐƠNToolStripMenuItem.Visible = false;
             }
         }
         private void tHỰCĐƠNToolStripMenuItem_Click(object sender, EventArgs e)
