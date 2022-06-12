@@ -152,5 +152,10 @@ namespace QLHFC.PresentationTier
         {
             e.Cancel = true;
         }
+
+        private void cmbSearchMonAn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
