@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using QLHFC.Classes;
 
 namespace QLHFC.PresentationTier
 {
@@ -42,6 +43,12 @@ namespace QLHFC.PresentationTier
             {
 
                 MessageBox.Show("Lỗi kết nối MySQL.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if(UserDetails.UserName != "admin")
+            {
+                btnAddKH.Enabled = false;
+                btnDelKH.Enabled = false;
+                btnEditKH.Enabled = false;
             }
         }
         //Hàm thêm
@@ -94,6 +101,7 @@ namespace QLHFC.PresentationTier
             txtNameKH.Text = Convert.ToString(row.Cells["TenKH"].Value);
             txtDiaChiKH.Text = Convert.ToString(row.Cells["DiaChiKH"].Value);
             txtSDT_KH.Text = Convert.ToString(row.Cells["SDT_KH"].Value);
+            LSDH.Tenkh = txtNameKH.Text;
         }
         //Hàm tìm kiếm
         private void txtSearchKH_TextChanged(object sender, EventArgs e)
@@ -107,6 +115,12 @@ namespace QLHFC.PresentationTier
             adap.Fill(mytable);
             conn.Close();
             dgvKH.DataSource = mytable;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormLSDH f = new FormLSDH();
+            f.Show();
         }
     }
 }
