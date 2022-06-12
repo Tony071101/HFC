@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using QLHFC.Classes;
 
 namespace QLHFC.PresentationTier
 {
@@ -19,7 +20,6 @@ namespace QLHFC.PresentationTier
         MySqlDataAdapter adap;
         DataTable mytable;
         string strconn = "Server = localhost; Port = 3306; Database = hfc; UId = root; Pwd = bjergsen07112001;";
-        string query_select = "SELECT * FROM hfc.cthd";
         string query_select_TD = "SELECT * FROM hfc.thucdon";
         string query_select_HD = "SELECT * FROM hfc.hoadon";
         public FormCTHD()
@@ -32,7 +32,7 @@ namespace QLHFC.PresentationTier
             //Show Database
             conn = new MySqlConnection(strconn);
             conn.Open();
-            adap = new MySqlDataAdapter(query_select, conn);
+            adap = new MySqlDataAdapter(query_select_HD, conn);
             cmd = new MySqlCommandBuilder(adap);
             mytable = new DataTable();
             adap.Fill(mytable);
@@ -42,26 +42,26 @@ namespace QLHFC.PresentationTier
             while (readtd.Read())
             {
                 cmbTD.Items.Add(readtd[1]);
-                cmbPrice.Items.Add(readtd[2]);
-            }
-            conn.Close();
-            conn.Open();
-            MySqlCommand loadhd = new MySqlCommand(query_select_HD, conn);
-            MySqlDataReader readhd = loadhd.ExecuteReader();
-
-            while (readhd.Read())
-            {
-                cmbID_HD.Items.Add(readhd[0]);
             }
             conn.Close();
             dgvCTHD.DataSource = mytable;
-            txtGiamGia.Text = "0";
+            this.dgvCTHD.Columns["TenKH"].Visible = false;
+            this.dgvCTHD.Columns["TenNV"].Visible = false;
+            this.dgvCTHD.Columns["Ngay"].Visible = false;
+            if(UserDetails.UserName != "admin")
+            {
+                btnAddCTHD.Enabled = false;
+                btnDelCTHD.Enabled = false;
+                btnPreview.Enabled = false;
+                cmbTD.Enabled = false;
+                txtPrice.Enabled = false;
+            }
         }
         //Cập nhật dữ liệu tức thời
         private void Read_Data()
         {
             conn.Open();
-            adap = new MySqlDataAdapter(query_select, conn);
+            adap = new MySqlDataAdapter(query_select_HD, conn);
             cmd = new MySqlCommandBuilder(adap);
             mytable = new DataTable();
             adap.Fill(mytable);
@@ -72,34 +72,24 @@ namespace QLHFC.PresentationTier
         private void btnAddCTHD_Click(object sender, EventArgs e)
         {
             conn.Open();
-            DateTime theDate = DateTime.Now;
-            theDate.ToString("dd/MM/yyyy H:mm:ss");
-            string query_insert = "INSERT INTO hfc.cthd (ID_HD,TenMonAn,SL,Gia,KhuyenMai,TongTien) VALUES ('" + cmbID_HD.Text + "','" + cmbTD.Text + "','" + txtSL.Text + "','" + cmbPrice.Text + "','" + txtGiamGia.Text + "%','" + txtTotal.Text + "')";
-            MySqlCommand command = new MySqlCommand(query_insert, conn);
+            string query_edit = "UPDATE hfc.hoadon SET TenMonAn ='" + cmbTD.Text + "', SL ='" + txtSL.Text + "', Gia = '"+txtPrice.Text+"', KhuyenMai = '"+txtGiamGia.Text+"', TongTien = '"+txtTotal.Text+"' WHERE ID_HD = '" + int.Parse(txtID_HD.Text) + "'";
+            MySqlCommand command = new MySqlCommand(query_edit, conn);
             command.ExecuteNonQuery();
             conn.Close();
             Read_Data();
+            //conn.Open();
+            //DateTime theDate = DateTime.Now;
+            //theDate.ToString("dd/MM/yyyy H:mm:ss");
+            //string query_insert = "INSERT INTO hfc.cthd (ID_HD,TenMonAn,SL,Gia,KhuyenMai,TongTien) VALUES ('" + cmbID_HD.Text + "','" + cmbTD.Text + "','" + txtSL.Text + "','" + cmbPrice.Text + "','" + txtGiamGia.Text + "%','" + txtTotal.Text + "')";
+            //MySqlCommand command = new MySqlCommand(query_insert, conn);
+            //command.ExecuteNonQuery();
+            //conn.Close();
+            //Read_Data();
         }
         //Hàm tính khuyến mãi
         private void cmbPrice_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                decimal tongTien = 0;
-                if (txtGiamGia.Text == "0")
-                {
-                    tongTien = (decimal)(int.Parse(txtSL.Text) * decimal.Parse(cmbPrice.Text));
-                }
-                else
-                {
-                    tongTien = (decimal)(int.Parse(txtSL.Text) * decimal.Parse(cmbPrice.Text)) - (decimal)(int.Parse(txtSL.Text) * decimal.Parse(cmbPrice.Text) * int.Parse(txtGiamGia.Text) / 100);
-                }
-                txtTotal.Text = tongTien.ToString();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Vui lòng nhập Số lượng trước!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
         //Hàm xóa
         private void btnDelCTHD_Click(object sender, EventArgs e)
@@ -107,7 +97,7 @@ namespace QLHFC.PresentationTier
             try
             {
                 conn.Open();
-                string query_delete = "DELETE FROM hfc.cthd WHERE ID_HD = '" + int.Parse(cmbID_HD.Text) + "'";
+                string query_delete = "DELETE FROM hfc.cthd WHERE ID_HD = '" + int.Parse(txtID_HD.Text) + "'";
                 MySqlCommand command = new MySqlCommand(query_delete, conn);
                 command.ExecuteNonQuery();
                 conn.Close();
@@ -133,6 +123,53 @@ namespace QLHFC.PresentationTier
         {
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.ShowDialog();
+        }
+
+        private void dgvCTHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+            row = dgvCTHD.Rows[e.RowIndex];
+            txtID_HD.Text = Convert.ToString(row.Cells["ID_HD"].Value);
+            cmbTD.Text = Convert.ToString(row.Cells["TenMonAn"].Value);
+            txtSL.Text = Convert.ToString(row.Cells["SL"].Value);
+            txtPrice.Text = Convert.ToString(row.Cells["Gia"].Value);
+            txtTotal.Text = Convert.ToString(row.Cells["TongTien"].Value);
+            Read_Data();
+        }
+
+        private void cmbTD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            conn = new MySqlConnection(strconn);
+            conn.Open();
+            string query_select_price = "Select * from hfc.thucdon where TenMonAn = '" + cmbTD.Text + "'";
+            MySqlCommand command = new MySqlCommand(query_select_price, conn);
+            MySqlDataReader readprice = command.ExecuteReader();
+            if (readprice.Read())
+            {
+                txtPrice.Text = readprice[2].ToString();
+            }
+            conn.Close();
+        }
+
+        private void txtGiamGia_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal tongTien = 0;
+                if (txtGiamGia.Text == "0")
+                {
+                    tongTien = (decimal)(int.Parse(txtSL.Text) * decimal.Parse(txtPrice.Text));
+                }
+                else
+                {
+                    tongTien = (decimal)(int.Parse(txtSL.Text) * decimal.Parse(txtPrice.Text)) - (decimal)(int.Parse(txtSL.Text) * decimal.Parse(txtPrice.Text) * int.Parse(txtGiamGia.Text) / 100);
+                }
+                txtTotal.Text = tongTien.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Vui lòng nhập Số khuyến mãi", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
