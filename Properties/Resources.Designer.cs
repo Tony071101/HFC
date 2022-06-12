@@ -203,6 +203,16 @@ namespace QLHFC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap payment_bill_19 {
+            get {
+                object obj = ResourceManager.GetObject("payment_bill-19", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngtree_red_fried_chicken_food_poster_image_196070 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-red-fried-chicken-food-poster-image_196070", resourceCulture);
