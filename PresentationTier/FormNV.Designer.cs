@@ -53,6 +53,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.pnlNhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,6 +63,7 @@
             // pnlNhanVien
             // 
             this.pnlNhanVien.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pnlNhanVien.Controls.Add(this.label7);
             this.pnlNhanVien.Controls.Add(this.pictureBox2);
             this.pnlNhanVien.Controls.Add(this.btnPic);
             this.pnlNhanVien.Controls.Add(this.pictureBox1);
@@ -142,9 +144,9 @@
             "SDT_NV",
             "Username",
             "Password"});
-            this.cmbSearch.Location = new System.Drawing.Point(567, 172);
+            this.cmbSearch.Location = new System.Drawing.Point(578, 172);
             this.cmbSearch.Name = "cmbSearch";
-            this.cmbSearch.Size = new System.Drawing.Size(97, 28);
+            this.cmbSearch.Size = new System.Drawing.Size(86, 28);
             this.cmbSearch.TabIndex = 17;
             // 
             // txtSearch
@@ -351,6 +353,17 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(462, 172);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(110, 28);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Tìm kiếm: ";
+            // 
             // FormNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -395,5 +408,6 @@
         private Button btnPic;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private Label label7;
     }
 }
