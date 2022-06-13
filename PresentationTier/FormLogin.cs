@@ -36,6 +36,8 @@ namespace QLHFC
                     //Store the information from the query to UserDetails class to be used in other forms
                     UserDetails.UserName = dt.Rows[0][4].ToString();
                     UserDetails.Tennv = dt.Rows[0][1].ToString();
+                    UserDetails.Diachi = dt.Rows[0][2].ToString();
+                    UserDetails.Sdt = dt.Rows[0][3].ToString();
                     //Hide this form and open the main Dashboard Form
                     this.Hide();
                     FormMenu f = new FormMenu(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString(), dt.Rows[0][4].ToString(), dt.Rows[0][5].ToString(), dt.Rows[0][6].ToString());
