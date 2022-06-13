@@ -42,6 +42,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cmbKH = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtTongtien = new System.Windows.Forms.TextBox();
+            this.txtKM = new System.Windows.Forms.TextBox();
+            this.txtGia = new System.Windows.Forms.TextBox();
+            this.txtSL = new System.Windows.Forms.TextBox();
+            this.txtTenMon = new System.Windows.Forms.TextBox();
+            this.txtNV = new System.Windows.Forms.TextBox();
             this.txtDate = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
@@ -49,7 +55,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.txtNV = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +62,7 @@
             // dgvHD
             // 
             this.dgvHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHD.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -178,6 +184,11 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtTongtien);
+            this.panel1.Controls.Add(this.txtKM);
+            this.panel1.Controls.Add(this.txtGia);
+            this.panel1.Controls.Add(this.txtSL);
+            this.panel1.Controls.Add(this.txtTenMon);
             this.panel1.Controls.Add(this.txtNV);
             this.panel1.Controls.Add(this.txtDate);
             this.panel1.Controls.Add(this.label5);
@@ -199,6 +210,51 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1055, 678);
             this.panel1.TabIndex = 1;
+            // 
+            // txtTongtien
+            // 
+            this.txtTongtien.Location = new System.Drawing.Point(525, 43);
+            this.txtTongtien.Name = "txtTongtien";
+            this.txtTongtien.Size = new System.Drawing.Size(101, 27);
+            this.txtTongtien.TabIndex = 38;
+            // 
+            // txtKM
+            // 
+            this.txtKM.Location = new System.Drawing.Point(465, 10);
+            this.txtKM.Name = "txtKM";
+            this.txtKM.Size = new System.Drawing.Size(101, 27);
+            this.txtKM.TabIndex = 37;
+            // 
+            // txtGia
+            // 
+            this.txtGia.Location = new System.Drawing.Point(358, 10);
+            this.txtGia.Name = "txtGia";
+            this.txtGia.Size = new System.Drawing.Size(101, 27);
+            this.txtGia.TabIndex = 36;
+            // 
+            // txtSL
+            // 
+            this.txtSL.Location = new System.Drawing.Point(251, 9);
+            this.txtSL.Name = "txtSL";
+            this.txtSL.Size = new System.Drawing.Size(101, 27);
+            this.txtSL.TabIndex = 35;
+            // 
+            // txtTenMon
+            // 
+            this.txtTenMon.Location = new System.Drawing.Point(144, 10);
+            this.txtTenMon.Name = "txtTenMon";
+            this.txtTenMon.Size = new System.Drawing.Size(101, 27);
+            this.txtTenMon.TabIndex = 34;
+            // 
+            // txtNV
+            // 
+            this.txtNV.BackColor = System.Drawing.Color.Turquoise;
+            this.txtNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNV.Location = new System.Drawing.Point(773, 82);
+            this.txtNV.Name = "txtNV";
+            this.txtNV.ReadOnly = true;
+            this.txtNV.Size = new System.Drawing.Size(270, 34);
+            this.txtNV.TabIndex = 33;
             // 
             // txtDate
             // 
@@ -272,16 +328,6 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
-            // txtNV
-            // 
-            this.txtNV.BackColor = System.Drawing.Color.Turquoise;
-            this.txtNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNV.Location = new System.Drawing.Point(773, 82);
-            this.txtNV.Name = "txtNV";
-            this.txtNV.ReadOnly = true;
-            this.txtNV.Size = new System.Drawing.Size(270, 34);
-            this.txtNV.TabIndex = 33;
-            // 
             // FormHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -322,5 +368,10 @@
         private TextBox txtDate;
         private Label label5;
         private TextBox txtNV;
+        private TextBox txtTongtien;
+        private TextBox txtKM;
+        private TextBox txtGia;
+        private TextBox txtSL;
+        private TextBox txtTenMon;
     }
 }
