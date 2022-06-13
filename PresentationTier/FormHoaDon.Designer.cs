@@ -44,12 +44,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtDate = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cmbNV = new System.Windows.Forms.ComboBox();
             this.btnPrint = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.txtNV = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -178,9 +178,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtNV);
             this.panel1.Controls.Add(this.txtDate);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.cmbNV);
             this.panel1.Controls.Add(this.btnPrint);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label4);
@@ -222,24 +222,14 @@
             this.label5.Text = "Ngày lập hóa đơn:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // cmbNV
-            // 
-            this.cmbNV.BackColor = System.Drawing.Color.Turquoise;
-            this.cmbNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cmbNV.FormattingEnabled = true;
-            this.cmbNV.Location = new System.Drawing.Point(784, 82);
-            this.cmbNV.Name = "cmbNV";
-            this.cmbNV.Size = new System.Drawing.Size(259, 36);
-            this.cmbNV.TabIndex = 30;
-            // 
             // btnPrint
             // 
             this.btnPrint.BackColor = System.Drawing.Color.Cyan;
             this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPrint.ForeColor = System.Drawing.Color.Red;
-            this.btnPrint.Location = new System.Drawing.Point(925, 15);
+            this.btnPrint.Location = new System.Drawing.Point(925, 17);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(127, 62);
+            this.btnPrint.Size = new System.Drawing.Size(118, 60);
             this.btnPrint.TabIndex = 29;
             this.btnPrint.Text = "In";
             this.btnPrint.UseVisualStyleBackColor = false;
@@ -282,6 +272,16 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // txtNV
+            // 
+            this.txtNV.BackColor = System.Drawing.Color.Turquoise;
+            this.txtNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNV.Location = new System.Drawing.Point(773, 82);
+            this.txtNV.Name = "txtNV";
+            this.txtNV.ReadOnly = true;
+            this.txtNV.Size = new System.Drawing.Size(270, 34);
+            this.txtNV.TabIndex = 33;
+            // 
             // FormHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -319,8 +319,8 @@
         private Button btnPrint;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private PrintPreviewDialog printPreviewDialog1;
-        private ComboBox cmbNV;
         private TextBox txtDate;
         private Label label5;
+        private TextBox txtNV;
     }
 }
