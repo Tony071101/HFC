@@ -14,7 +14,7 @@ namespace QLHFC.PresentationTier
     public partial class FormMenu : Form
     {
         //Khai báo phân quyền
-        string ID_NV = "", TenNV = "", DiaChiNV = "", SDT_NV = "", Username = "", Password = "";
+        string ID_NV = "", TenNV = "", DiaChiNV = "", SDT_NV = "", Username = "", Password = "", AnhNV = "";
         
         public FormMenu()
         {
@@ -22,7 +22,7 @@ namespace QLHFC.PresentationTier
 
         }
         //Constructor
-        public FormMenu(String ID_NV, String TenNV, String DiaChiNV, String SDT_NV, String Username, String Password)
+        public FormMenu(String ID_NV, String TenNV, String DiaChiNV, String SDT_NV, String Username, String Password, String AnhNV)
         {
             InitializeComponent();
             this.ID_NV = ID_NV;
@@ -31,6 +31,7 @@ namespace QLHFC.PresentationTier
             this.SDT_NV = SDT_NV;
             this.Username = Username;
             this.Password = Password;
+            this.AnhNV = AnhNV;
         }
         private void hÓAĐƠNToolStripMenuItem_Click(object sender, EventArgs e)
         {
