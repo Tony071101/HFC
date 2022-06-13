@@ -114,10 +114,10 @@ namespace QLHFC.PresentationTier
             Bitmap bmp = new Bitmap(this.dgvCTHD.Width, this.dgvCTHD.Height);
             dgvCTHD.DrawToBitmap(bmp, new Rectangle(0, 0, this.dgvCTHD.Width, this.dgvCTHD.Height));
             e.Graphics.DrawImage(bmp, 100, 140);
-            e.Graphics.DrawString("Chi tiết hóa đơn", new Font("Arial", 40, FontStyle.Bold), Brushes.Red, new Point(220, 30));
+            e.Graphics.DrawString("Danh sách Chi tiết hóa đơn", new Font("Arial", 40, FontStyle.Bold), Brushes.Red, new Point(70, 0));
             e.Graphics.DrawString("_________________________________________________________", new Font("Arial", 40, FontStyle.Bold), Brushes.Black, new Point(0, 40));
             //e.Graphics.DrawString("ID_HD: " + dgvCTHD.DataSource, new Font("Arial", 20, FontStyle.Bold), Brushes.Red, new Point(0, 50));
-            e.Graphics.DrawString("Ngày in CTHD: " + DateTime.Now.ToString("dd-MM-yyy hh:mm"), new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(0, 110));
+            e.Graphics.DrawString("Ngày in Danh sách CTHD: " + DateTime.Now.ToString("dd-MM-yyy hh:mm"), new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(500, 70));
         }
         private void btnPreview_Click(object sender, EventArgs e)
         {
