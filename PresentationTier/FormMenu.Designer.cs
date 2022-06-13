@@ -35,6 +35,7 @@
             this.tHỰCĐƠNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kHÁCHHÀNGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nHÂNVIÊNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tTNVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đĂNGXUẤTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -56,6 +57,7 @@
             this.tHỰCĐƠNToolStripMenuItem,
             this.kHÁCHHÀNGToolStripMenuItem,
             this.nHÂNVIÊNToolStripMenuItem,
+            this.tTNVToolStripMenuItem,
             this.đĂNGXUẤTToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -108,6 +110,16 @@
             this.nHÂNVIÊNToolStripMenuItem.Size = new System.Drawing.Size(162, 29);
             this.nHÂNVIÊNToolStripMenuItem.Text = "NHÂN VIÊN";
             this.nHÂNVIÊNToolStripMenuItem.Click += new System.EventHandler(this.nHÂNVIÊNToolStripMenuItem_Click);
+            // 
+            // tTNVToolStripMenuItem
+            // 
+            this.tTNVToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
+            this.tTNVToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tTNVToolStripMenuItem.Image")));
+            this.tTNVToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.White;
+            this.tTNVToolStripMenuItem.Name = "tTNVToolStripMenuItem";
+            this.tTNVToolStripMenuItem.Size = new System.Drawing.Size(162, 29);
+            this.tTNVToolStripMenuItem.Text = "Thông tin NV";
+            this.tTNVToolStripMenuItem.Click += new System.EventHandler(this.tTNVToolStripMenuItem_Click);
             // 
             // đĂNGXUẤTToolStripMenuItem
             // 
@@ -180,5 +192,6 @@
         private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStripStatusLabel toolStripStatusLabel2;
         private ToolStripMenuItem hÓAĐƠNToolStripMenuItem1;
+        private ToolStripMenuItem tTNVToolStripMenuItem;
     }
 }
