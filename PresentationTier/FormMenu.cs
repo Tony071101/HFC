@@ -40,6 +40,13 @@ namespace QLHFC.PresentationTier
             f.Show();
         }
 
+        private void tTNVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TTNV f = new TTNV();
+            f.MdiParent = this;
+            f.Show();
+        }
+
         private void hÓAĐƠNToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FormTaoHD f = new FormTaoHD();
