@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlNhanVien = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnPic = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -53,7 +54,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.pnlNhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -89,6 +89,17 @@
             this.pnlNhanVien.Name = "pnlNhanVien";
             this.pnlNhanVien.Size = new System.Drawing.Size(1061, 675);
             this.pnlNhanVien.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(462, 172);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(110, 28);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Tìm kiếm: ";
             // 
             // pictureBox2
             // 
@@ -255,7 +266,7 @@
             this.txtAddress_NV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtAddress_NV.Location = new System.Drawing.Point(421, 132);
             this.txtAddress_NV.Name = "txtAddress_NV";
-            this.txtAddress_NV.Size = new System.Drawing.Size(242, 34);
+            this.txtAddress_NV.Size = new System.Drawing.Size(243, 34);
             this.txtAddress_NV.TabIndex = 9;
             // 
             // txtName_NV
@@ -352,17 +363,6 @@
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(462, 172);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 28);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Tìm kiếm: ";
             // 
             // FormNV
             // 
