@@ -38,7 +38,7 @@ namespace QLHFC
                     UserDetails.Tennv = dt.Rows[0][1].ToString();
                     //Hide this form and open the main Dashboard Form
                     this.Hide();
-                    FormMenu f = new FormMenu(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString(), dt.Rows[0][4].ToString(), dt.Rows[0][5].ToString());
+                    FormMenu f = new FormMenu(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString(), dt.Rows[0][4].ToString(), dt.Rows[0][5].ToString(), dt.Rows[0][6].ToString());
                     f.ShowDialog();
                 }
                 //If failed login - show message
