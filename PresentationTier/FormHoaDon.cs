@@ -46,14 +46,6 @@ namespace QLHFC.PresentationTier
                     cmbKH.Items.Add(readkh[1]);
                 }
                 conn.Close();
-                conn.Open();
-                MySqlCommand loadnv = new MySqlCommand(query_select_NV, conn);
-                MySqlDataReader readnv = loadnv.ExecuteReader();
-                while (readnv.Read())
-                {
-                    cmbNV.Items.Add(readnv[1]);
-                }
-                conn.Close();
                 dgvHD.DataSource = mytable;
             }
             catch (MySqlException)
@@ -70,7 +62,7 @@ namespace QLHFC.PresentationTier
                 btnDelHD.Enabled = false;
                 btnUpdateHD.Enabled = false;
                 btnPrint.Enabled = false;
-                cmbNV.Enabled = false;
+                txtNV.Enabled = false;
                 cmbKH.Enabled = false;
             }
         }
@@ -116,7 +108,7 @@ namespace QLHFC.PresentationTier
         private void btnUpdateHD_Click(object sender, EventArgs e)
         {
             conn.Open();
-            string query_edit = "UPDATE hfc.hoadon SET TenKH ='" + cmbKH.Text + "', TenNV ='" + cmbNV.Text + "' WHERE ID_HD = '" + int.Parse(txtID_HD.Text) + "'";
+            string query_edit = "UPDATE hfc.hoadon SET TenKH ='" + cmbKH.Text + "', TenNV ='" + txtNV.Text + "' WHERE ID_HD = '" + int.Parse(txtID_HD.Text) + "'";
             MySqlCommand command = new MySqlCommand(query_edit, conn);
             command.ExecuteNonQuery();
             conn.Close();
@@ -130,7 +122,7 @@ namespace QLHFC.PresentationTier
             row = dgvHD.Rows[e.RowIndex];
             txtID_HD.Text = Convert.ToString(row.Cells["ID_HD"].Value);
             cmbKH.Text = Convert.ToString(row.Cells["TenKH"].Value);
-            cmbNV.Text = Convert.ToString(row.Cells["TenNV"].Value);
+            txtNV.Text = Convert.ToString(row.Cells["TenNV"].Value);
             txtDate.Text = Convert.ToString(row.Cells["Ngay"].Value);
             Read_Data();
         }
