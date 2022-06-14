@@ -62,12 +62,12 @@ namespace QLHFC.PresentationTier
             txtGia.Visible = false;
             txtKM.Visible = false;
             txtTongtien.Visible = false;
+            txtNV.ReadOnly = true;
             if (UserDetails.UserName != "admin")
             {
                 btnDelHD.Enabled = false;
                 btnUpdateHD.Enabled = false;
                 //btnPrint.Enabled = false;
-                txtNV.ReadOnly = true;
                 cmbKH.Enabled = false;
                 conn = new MySqlConnection(strconn);
                 conn.Open();
