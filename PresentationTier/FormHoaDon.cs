@@ -167,7 +167,7 @@ namespace QLHFC.PresentationTier
             {
                     Bitmap bmp = new Bitmap(this.dgvHD.Width, this.dgvHD.Height);
                     dgvHD.DrawToBitmap(bmp, new Rectangle(0, 0, this.dgvHD.Width, this.dgvHD.Height));
-                    e.Graphics.DrawImage(bmp, 100, 140);
+                    e.Graphics.DrawImage(bmp, 0, 140);
                     e.Graphics.DrawString("Danh sách Hóa đơn", new Font("Arial", 40, FontStyle.Bold), Brushes.Red, new Point(150, 0));
                     e.Graphics.DrawString("_________________________________________________________", new Font("Arial", 40, FontStyle.Bold), Brushes.Black, new Point(0, 40));
                     e.Graphics.DrawString("Ngày in Danh sách Hóa đơn: " + DateTime.Now.ToString("dd-MM-yyy hh:mm"), new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(500, 70));
