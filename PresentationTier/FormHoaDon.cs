@@ -22,7 +22,7 @@ namespace QLHFC.PresentationTier
         string strconn = "Server = localhost; Port = 3306; Database = hfc; UId = root; Pwd = bjergsen07112001;";
         string query_select = "SELECT * FROM hfc.hoadon";
         string query_select_KH = "SELECT * FROM hfc.khachhang";
-        string query_select_NV = "SELECT * FROM hfc.nhanvien";
+        string query_select_HD_TheoNV = "SELECT * FROM hfc.hoadon where TenNV = '" +UserDetails.Tennv+ "'";
         public FormHoaDon()
         {
             InitializeComponent();
@@ -67,8 +67,16 @@ namespace QLHFC.PresentationTier
                 btnDelHD.Enabled = false;
                 btnUpdateHD.Enabled = false;
                 //btnPrint.Enabled = false;
-                txtNV.Enabled = false;
+                txtNV.ReadOnly = true;
                 cmbKH.Enabled = false;
+                conn = new MySqlConnection(strconn);
+                conn.Open();
+                adap = new MySqlDataAdapter(query_select_HD_TheoNV, conn);
+                cmd = new MySqlCommandBuilder(adap);
+                mytable = new DataTable();
+                adap.Fill(mytable);
+                conn.Close();
+                dgvHD.DataSource = mytable;
             }
         }
         //Cập nhật dữ liệu tức thời
