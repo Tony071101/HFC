@@ -15,9 +15,7 @@ namespace QLHFC.PresentationTier
     public partial class TTNV : Form
     {
         MySqlConnection conn;
-        MySqlCommandBuilder cmd;
         MySqlDataAdapter adap;
-        DataTable mytable;
         string strconn = "Server = localhost; Port = 3306; Database = hfc; UId = root; Pwd = bjergsen07112001";
         string query_select = "SELECT AnhNV FROM hfc.nhanvien where Username = '" +UserDetails.UserName+ "'";
         public TTNV()
