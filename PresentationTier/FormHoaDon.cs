@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using MySql.Data.MySqlClient;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-using QLHFC.Classes;
 
 namespace QLHFC.PresentationTier
 {
@@ -22,7 +13,6 @@ namespace QLHFC.PresentationTier
         string strconn = "Server = localhost; Port = 3306; Database = hfc; UId = root; Pwd = bjergsen07112001;";
         string query_select = "SELECT * FROM hfc.hoadon";
         string query_select_KH = "SELECT * FROM hfc.khachhang";
-        string query_select_HD_TheoNV = "SELECT * FROM hfc.hoadon where TenNV = '" +UserDetails.Tennv+ "'";
         public FormHoaDon()
         {
             InitializeComponent();
@@ -63,21 +53,6 @@ namespace QLHFC.PresentationTier
             txtKM.Visible = false;
             txtTongtien.Visible = false;
             txtNV.ReadOnly = true;
-            if (UserDetails.UserName != "admin")
-            {
-                btnDelHD.Enabled = false;
-                btnUpdateHD.Enabled = false;
-                //btnPrint.Enabled = false;
-                cmbKH.Enabled = false;
-                conn = new MySqlConnection(strconn);
-                conn.Open();
-                adap = new MySqlDataAdapter(query_select_HD_TheoNV, conn);
-                cmd = new MySqlCommandBuilder(adap);
-                mytable = new DataTable();
-                adap.Fill(mytable);
-                conn.Close();
-                dgvHD.DataSource = mytable;
-            }
         }
         //Cập nhật dữ liệu tức thời
         private void Read_Data()
@@ -147,8 +122,8 @@ namespace QLHFC.PresentationTier
         //Mở FormCTHD
         private void button1_Click(object sender, EventArgs e)
         {
-                FormCTHD f = new FormCTHD();
-                f.Show();
+            FormCTHD f = new FormCTHD();
+            f.Show();
         }
         //Hàm tìm kiếm
         private void txtSearchHD_TextChanged(object sender, EventArgs e)
@@ -171,31 +146,12 @@ namespace QLHFC.PresentationTier
         }
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            if(UserDetails.UserName == "admin")
-            {
-                    Bitmap bmp = new Bitmap(this.dgvHD.Width, this.dgvHD.Height);
-                    dgvHD.DrawToBitmap(bmp, new Rectangle(0, 0, this.dgvHD.Width, this.dgvHD.Height));
-                    e.Graphics.DrawImage(bmp, 0, 140);
-                    e.Graphics.DrawString("Danh sách Hóa đơn", new Font("Arial", 40, FontStyle.Bold), Brushes.Red, new Point(150, 0));
-                    e.Graphics.DrawString("_________________________________________________________", new Font("Arial", 40, FontStyle.Bold), Brushes.Black, new Point(0, 40));
-                    e.Graphics.DrawString("Ngày in Danh sách Hóa đơn: " + DateTime.Now.ToString("dd-MM-yyy hh:mm"), new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(500, 70));
-            }
-            else
-            {
-                e.Graphics.DrawString("Hóa đơn", new Font("Arial", 40, FontStyle.Bold), Brushes.Red, new Point(300, 30));
-                e.Graphics.DrawString("_________________________________________________________", new Font("Arial", 40, FontStyle.Bold), Brushes.Black, new Point(0, 40));
-                e.Graphics.DrawString("Ngày in Hóa đơn: " + DateTime.Now.ToString("dd-MM-yyy hh:mm"), new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(600, 70));
-                e.Graphics.DrawString("Số Hóa đơn: " + txtID_HD.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(0, 120));
-                e.Graphics.DrawString("Họ tên Khách hàng: " + cmbKH.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(0, 150));
-                e.Graphics.DrawString("Nhân viên lập hóa đơn: " + txtNV.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(0, 180));
-                e.Graphics.DrawString("Ngày lập Hóa đơn: " + txtDate.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(500, 120));
-                e.Graphics.DrawString("Tên món ăn: " + txtTenMon.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(0, 210));
-                e.Graphics.DrawString("Giá món: " + txtGia.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(650, 210));
-                e.Graphics.DrawString("Số lượng: " + txtSL.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(300, 210));
-                e.Graphics.DrawString("Khuyến mãi: " + txtKM.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(450, 210));
-                e.Graphics.DrawString("_________________________________________________________", new Font("Arial", 40, FontStyle.Regular), Brushes.Black, new Point(0, 200));
-                e.Graphics.DrawString("Thành tiền: " + txtTongtien.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(650, 270));
-            }
+            Bitmap bmp = new Bitmap(this.dgvHD.Width, this.dgvHD.Height);
+            dgvHD.DrawToBitmap(bmp, new Rectangle(0, 0, this.dgvHD.Width, this.dgvHD.Height));
+            e.Graphics.DrawImage(bmp, 0, 140);
+            e.Graphics.DrawString("Danh sách Hóa đơn", new Font("Arial", 40, FontStyle.Bold), Brushes.Red, new Point(150, 0));
+            e.Graphics.DrawString("_________________________________________________________", new Font("Arial", 40, FontStyle.Bold), Brushes.Black, new Point(0, 40));
+            e.Graphics.DrawString("Ngày in Danh sách Hóa đơn: " + DateTime.Now.ToString("dd-MM-yyy hh:mm"), new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(500, 70));
         }
 
         private void txtID_HD_TextChanged(object sender, EventArgs e)
