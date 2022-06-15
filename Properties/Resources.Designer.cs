@@ -213,6 +213,16 @@ namespace QLHFC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap list_icon_png_265066 {
+            get {
+                object obj = ResourceManager.GetObject("list-icon-png_265066", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap payment_bill_19 {
             get {
                 object obj = ResourceManager.GetObject("payment_bill-19", resourceCulture);
