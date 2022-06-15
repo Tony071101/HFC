@@ -97,7 +97,7 @@ namespace QLHFC.PresentationTier
             try
             {
                 conn.Open();
-                string query_delete = "DELETE FROM hfc.cthd WHERE ID_HD = '" + int.Parse(txtID_HD.Text) + "'";
+                string query_delete = "DELETE FROM hfc.hoadon WHERE ID_HD = '" + int.Parse(txtID_HD.Text) + "'";
                 MySqlCommand command = new MySqlCommand(query_delete, conn);
                 command.ExecuteNonQuery();
                 conn.Close();
