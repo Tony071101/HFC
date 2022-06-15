@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.hÓAĐƠNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dSHOAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hÓAĐƠNToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tHỰCĐƠNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kHÁCHHÀNGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,6 +54,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hÓAĐƠNToolStripMenuItem,
+            this.dSHOAToolStripMenuItem,
             this.hÓAĐƠNToolStripMenuItem1,
             this.tHỰCĐƠNToolStripMenuItem,
             this.kHÁCHHÀNGToolStripMenuItem,
@@ -74,6 +76,15 @@
             this.hÓAĐƠNToolStripMenuItem.Size = new System.Drawing.Size(162, 29);
             this.hÓAĐƠNToolStripMenuItem.Text = "DS HÓA ĐƠN";
             this.hÓAĐƠNToolStripMenuItem.Click += new System.EventHandler(this.hÓAĐƠNToolStripMenuItem_Click);
+            // 
+            // dSHOAToolStripMenuItem
+            // 
+            this.dSHOAToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
+            this.dSHOAToolStripMenuItem.Image = global::QLHFC.Properties.Resources.list_icon_png_265066;
+            this.dSHOAToolStripMenuItem.Name = "dSHOAToolStripMenuItem";
+            this.dSHOAToolStripMenuItem.Size = new System.Drawing.Size(162, 29);
+            this.dSHOAToolStripMenuItem.Text = "DS HÓA ĐƠN";
+            this.dSHOAToolStripMenuItem.Click += new System.EventHandler(this.dSHOAToolStripMenuItem_Click);
             // 
             // hÓAĐƠNToolStripMenuItem1
             // 
@@ -193,5 +204,6 @@
         private ToolStripStatusLabel toolStripStatusLabel2;
         private ToolStripMenuItem hÓAĐƠNToolStripMenuItem1;
         private ToolStripMenuItem tTNVToolStripMenuItem;
+        private ToolStripMenuItem dSHOAToolStripMenuItem;
     }
 }
