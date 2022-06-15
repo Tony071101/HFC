@@ -47,6 +47,13 @@ namespace QLHFC.PresentationTier
             f.Show();
         }
 
+        private void dSHOAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHDNV f = new FormHDNV();
+            f.MdiParent = this;
+            f.Show();
+        }
+
         private void hÓAĐƠNToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FormTaoHD f = new FormTaoHD();
@@ -83,6 +90,11 @@ namespace QLHFC.PresentationTier
             {
                 nHÂNVIÊNToolStripMenuItem.Visible = false;
                 tHỰCĐƠNToolStripMenuItem.Visible = false;
+                hÓAĐƠNToolStripMenuItem.Visible = false;
+            }
+            else
+            {
+                dSHOAToolStripMenuItem.Visible = false;
             }
         }
         private void tHỰCĐƠNToolStripMenuItem_Click(object sender, EventArgs e)
