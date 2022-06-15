@@ -30,7 +30,6 @@ namespace QLHFC.PresentationTier
 
         private void FormTaoHD_Load(object sender, EventArgs e)
         {
-            FormMenu f;
             try
             {
                 conn = new MySqlConnection(strconn);
