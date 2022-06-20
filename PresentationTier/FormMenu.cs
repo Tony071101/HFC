@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -60,6 +61,7 @@ namespace QLHFC.PresentationTier
             f.MdiParent = this;
             f.Show();
         }
+
 
         private void đĂNGXUẤTToolStripMenuItem_Click(object sender, EventArgs e)
         {
