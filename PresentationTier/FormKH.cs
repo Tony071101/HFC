@@ -46,7 +46,7 @@ namespace QLHFC.PresentationTier
             }
             if(UserDetails.UserName != "admin")
             {
-                btnAddKH.Enabled = false;
+                //btnAddKH.Enabled = false;
                 btnDelKH.Enabled = false;
                 btnEditKH.Enabled = false;
             }
