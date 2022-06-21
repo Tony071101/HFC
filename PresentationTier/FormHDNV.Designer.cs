@@ -117,6 +117,7 @@
             // 
             // dgvHD
             // 
+            this.dgvHD.AllowUserToAddRows = false;
             this.dgvHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHD.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -140,6 +141,7 @@
             // 
             // dgvCTHD
             // 
+            this.dgvCTHD.AllowUserToAddRows = false;
             this.dgvCTHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCTHD.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
