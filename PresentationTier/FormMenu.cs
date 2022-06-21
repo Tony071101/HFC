@@ -60,6 +60,13 @@ namespace QLHFC.PresentationTier
             f.Show();
         }
 
+        private void checkinCheckoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCheckinCheckout f = new FormCheckinCheckout();
+            f.MdiParent = this;
+            f.Show();
+        }
+
         private void hÓAĐƠNToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FormTaoHD f = new FormTaoHD();
@@ -110,6 +117,7 @@ namespace QLHFC.PresentationTier
                 nHÂNVIÊNToolStripMenuItem.Visible = false;
                 tHỰCĐƠNToolStripMenuItem.Visible = false;
                 hÓAĐƠNToolStripMenuItem.Visible = false;
+                checkinCheckoutToolStripMenuItem.Visible = false;
             }
             else
             {
