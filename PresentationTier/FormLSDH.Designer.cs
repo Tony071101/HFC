@@ -34,6 +34,7 @@
             // 
             // dgvLSDH
             // 
+            this.dgvLSDH.AllowUserToAddRows = false;
             this.dgvLSDH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLSDH.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvLSDH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
