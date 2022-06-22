@@ -53,6 +53,10 @@ namespace QLHFC.PresentationTier
             txtKM.Visible = false;
             txtTongtien.Visible = false;
             txtNV.ReadOnly = true;
+            dgvHD.Columns[0].HeaderText = "ID Hóa đơn";
+            dgvHD.Columns[1].HeaderText = "Tên khách hàng";
+            dgvHD.Columns[2].HeaderText = "Tên nhân viên";
+            dgvHD.Columns[3].HeaderText = "Ngày lập hóa đơn";
         }
         //Cập nhật dữ liệu tức thời
         private void Read_Data()
