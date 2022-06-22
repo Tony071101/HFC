@@ -218,6 +218,7 @@
             this.txtTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTotal.Location = new System.Drawing.Point(353, 233);
             this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(174, 34);
             this.txtTotal.TabIndex = 48;
             // 
@@ -227,6 +228,7 @@
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPrice.Location = new System.Drawing.Point(270, 185);
             this.txtPrice.Name = "txtPrice";
+            this.txtPrice.ReadOnly = true;
             this.txtPrice.Size = new System.Drawing.Size(257, 34);
             this.txtPrice.TabIndex = 49;
             this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
