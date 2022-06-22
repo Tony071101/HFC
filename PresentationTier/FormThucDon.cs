@@ -53,6 +53,10 @@ namespace QLHFC.PresentationTier
             pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
             //pic.Visible = false;
             MessageBox.Show("Vui lòng chọn hình khi thêm 1 món ăn", "Quy định", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            dgvThucDon.Columns[0].HeaderText = "ID món ăn";
+            dgvThucDon.Columns[1].HeaderText = "Tên món ăn";
+            dgvThucDon.Columns[2].HeaderText = "Giá món";
+            dgvThucDon.Columns[3].HeaderText = "Hình minh họa";
         }
         //Hàm thêm
         private void btnAddFood_Click(object sender, EventArgs e)
