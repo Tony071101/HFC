@@ -54,6 +54,11 @@ namespace QLHFC.PresentationTier
             pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
             //pic.Visible = false;
             MessageBox.Show("Nhân viên khi thêm phải có hình ảnh", "Quy định", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            dgvNV.Columns[0].HeaderText = "ID nhân viên";
+            dgvNV.Columns[1].HeaderText = "Tên nhân viên";
+            dgvNV.Columns[2].HeaderText = "Địa chỉ nhân viên";
+            dgvNV.Columns[3].HeaderText = "SĐT cá nhân";
+            dgvNV.Columns[6].HeaderText = "Ảnh đại diện";
         }
         //Hàm thêm
         private void btnAdd_Click(object sender, EventArgs e)
