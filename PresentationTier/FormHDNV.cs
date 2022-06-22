@@ -52,6 +52,15 @@ namespace QLHFC.PresentationTier
             txtKM.Visible = false;
             txtTongtien.Visible = false;
             txtNV.Visible = false;
+            dgvHD.Columns[0].HeaderText = "ID Hóa đơn";
+            dgvHD.Columns[1].HeaderText = "Tên Khách hàng";
+            dgvHD.Columns[2].HeaderText = "Tên Nhân viên";
+            dgvHD.Columns[3].HeaderText = "Ngày lập";
+            dgvCTHD.Columns[4].HeaderText = "Tên món ăn";
+            dgvCTHD.Columns[5].HeaderText = "Số lượng";
+            dgvCTHD.Columns[6].HeaderText = "Giá món";
+            dgvCTHD.Columns[7].HeaderText = "Khuyến mãi";
+            dgvCTHD.Columns[8].HeaderText = "Tổng tiền";
         }
 
         private void dgvHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -76,6 +85,7 @@ namespace QLHFC.PresentationTier
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.ShowDialog();
         }
@@ -89,14 +99,18 @@ namespace QLHFC.PresentationTier
             e.Graphics.DrawString("Họ tên Khách hàng: " + txtKH.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(0, 150));
             e.Graphics.DrawString("Nhân viên lập hóa đơn: " + txtNV.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(0, 180));
             e.Graphics.DrawString("Ngày lập Hóa đơn: " + txtDate.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(500, 120));
-            e.Graphics.DrawString("Tên món ăn: " + txtTenMon.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(0, 210));
-            e.Graphics.DrawString("Giá món: " + txtGia.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(650, 210));
-            e.Graphics.DrawString("Số lượng: " + txtSL.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(300, 210));
-            e.Graphics.DrawString("Khuyến mãi: " + txtKM.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(450, 210));
+            e.Graphics.DrawString("Tên món ăn ", new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(0, 210));
+            e.Graphics.DrawString("Giá món ", new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(750, 210));
+            e.Graphics.DrawString("Số lượng ", new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(270, 210));
+            e.Graphics.DrawString("Khuyến mãi ", new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(500, 210));
+            e.Graphics.DrawString("" + txtTenMon.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(0, 230));
+            e.Graphics.DrawString("" + txtGia.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(755, 230));
+            e.Graphics.DrawString("" + txtSL.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(300, 230));
+            e.Graphics.DrawString("" + txtKM.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(540, 230));
             e.Graphics.DrawString("_________________________________________________________", new Font("Arial", 40, FontStyle.Regular), Brushes.Black, new Point(0, 200));
             e.Graphics.DrawString("Thành tiền: " + txtTongtien.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(650, 270));
+            
         }
-
         private void btnQR_Click(object sender, EventArgs e)
         {
             Zen.Barcode.CodeQrBarcodeDraw codeQr = Zen.Barcode.BarcodeDrawFactory.CodeQr;
@@ -109,7 +123,7 @@ namespace QLHFC.PresentationTier
             txtSL.Text; /*+ "|" +*/
             //txtKM.Text; /*+ "|" +*/
             //Convert.ToString(txtTongtien.Text);
-            pictureBox1.Image = codeQr.Draw(qrText, 50);
+            pictureBox1.Image = codeQr.Draw(qrText, 60);
             //pictureBox1.Image = codeQr.Draw("{" + '"' + "Số Hóa đơn" + '"' + ":" + '"' + txtID_HD.Text + '"' + "," + '"' + "Họ tên Khách hàng" + '"' + ":" + '"' + txtKH.Text + '"' + "," + '"' + "Nhân viên lập hóa đơn" + '"' + ":" + '"' + txtNV.Text + '"' + '"' + "Ngày lập Hóa đơn" + '"' + ":" + '"' + txtDate.Text + "," + '"' + "Tên Món Ăn" + '"' + ":" + '"' + txtTenMon.Text + "," + '"' + "Giá món" + '"' + ":" + '"' + txtGia.Text + "," + '"' + "Số lượng" + '"' + ":" + '"' + txtSL.Text + "," + '"' + "Khuyến mãi" + '"' + ":" + '"' + txtKM.Text + "," + '"' + "Thành tiền" + '"' + ":" + '"' + txtTongtien.Text + '"' + "}", 900);
         }
 
@@ -130,6 +144,11 @@ namespace QLHFC.PresentationTier
             pictureBox1.DrawToBitmap(bmp, new Rectangle(0, 0, pictureBox1.Width, pictureBox1.Height));
             e.Graphics.DrawImage(bmp, 0, 0);
             bmp.Dispose();
+        }
+
+        private void dgvCTHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
