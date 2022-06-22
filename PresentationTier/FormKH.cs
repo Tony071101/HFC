@@ -50,6 +50,10 @@ namespace QLHFC.PresentationTier
                 btnDelKH.Enabled = false;
                 btnEditKH.Enabled = false;
             }
+            dgvKH.Columns[0].HeaderText = "ID Khách hàng";
+            dgvKH.Columns[1].HeaderText = "Tên Khách hàng";
+            dgvKH.Columns[2].HeaderText = "Địa chỉ Khách hàng";
+            dgvKH.Columns[3].HeaderText = "SĐT cá nhân";
         }
         //Hàm thêm
         private void btnAddKH_Click(object sender, EventArgs e)
