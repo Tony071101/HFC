@@ -56,6 +56,12 @@ namespace QLHFC.PresentationTier
                 cmbTD.Enabled = false;
                 txtPrice.Enabled = false;
             }
+            dgvCTHD.Columns[0].HeaderText = "ID Hóa đơn";
+            dgvCTHD.Columns[4].HeaderText = "Tên món";
+            dgvCTHD.Columns[5].HeaderText = "Số lượng";
+            dgvCTHD.Columns[6].HeaderText = "Giá món";
+            dgvCTHD.Columns[7].HeaderText = "Khuyến mãi";
+            dgvCTHD.Columns[8].HeaderText = "Tổng tiền";
         }
         //Cập nhật dữ liệu tức thời
         private void Read_Data()
