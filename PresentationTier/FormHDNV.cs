@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -94,6 +95,41 @@ namespace QLHFC.PresentationTier
             e.Graphics.DrawString("Khuyến mãi: " + txtKM.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(450, 210));
             e.Graphics.DrawString("_________________________________________________________", new Font("Arial", 40, FontStyle.Regular), Brushes.Black, new Point(0, 200));
             e.Graphics.DrawString("Thành tiền: " + txtTongtien.Text, new Font("Arial", 13, FontStyle.Regular), Brushes.Black, new Point(650, 270));
+        }
+
+        private void btnQR_Click(object sender, EventArgs e)
+        {
+            Zen.Barcode.CodeQrBarcodeDraw codeQr = Zen.Barcode.BarcodeDrawFactory.CodeQr;
+            var qrText = txtID_HD.Text + "|" +
+            txtKH.Text + "|" +
+            txtNV.Text + "|" +
+            txtDate.Text + "|" +
+            txtTenMon.Text + "|" +
+            //txtGia.Text /*+ "|" +*/
+            txtSL.Text; /*+ "|" +*/
+            //txtKM.Text; /*+ "|" +*/
+            //Convert.ToString(txtTongtien.Text);
+            pictureBox1.Image = codeQr.Draw(qrText, 50);
+            //pictureBox1.Image = codeQr.Draw("{" + '"' + "Số Hóa đơn" + '"' + ":" + '"' + txtID_HD.Text + '"' + "," + '"' + "Họ tên Khách hàng" + '"' + ":" + '"' + txtKH.Text + '"' + "," + '"' + "Nhân viên lập hóa đơn" + '"' + ":" + '"' + txtNV.Text + '"' + '"' + "Ngày lập Hóa đơn" + '"' + ":" + '"' + txtDate.Text + "," + '"' + "Tên Món Ăn" + '"' + ":" + '"' + txtTenMon.Text + "," + '"' + "Giá món" + '"' + ":" + '"' + txtGia.Text + "," + '"' + "Số lượng" + '"' + ":" + '"' + txtSL.Text + "," + '"' + "Khuyến mãi" + '"' + ":" + '"' + txtKM.Text + "," + '"' + "Thành tiền" + '"' + ":" + '"' + txtTongtien.Text + '"' + "}", 900);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PrintDialog pd = new PrintDialog();
+            PrintDocument printDocument = new PrintDocument();
+            printDocument.PrintPage += PrintPic;
+            pd.Document = printDocument;
+            if(pd.ShowDialog() == DialogResult.OK)
+            {
+                printDocument.Print();
+            }
+        }
+        private void PrintPic(object sender, PrintPageEventArgs e)
+        {
+            Bitmap bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            pictureBox1.DrawToBitmap(bmp, new Rectangle(0, 0, pictureBox1.Width, pictureBox1.Height));
+            e.Graphics.DrawImage(bmp, 0, 0);
+            bmp.Dispose();
         }
     }
 }
