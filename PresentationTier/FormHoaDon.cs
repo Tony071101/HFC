@@ -58,7 +58,9 @@ namespace QLHFC.PresentationTier
             dgvHD.Columns[2].HeaderText = "Tên nhân viên";
             dgvHD.Columns[3].HeaderText = "Ngày lập hóa đơn";
         }
+        //
         //Cập nhật dữ liệu tức thời
+        //
         private void Read_Data()
         {
             conn.Open();
@@ -69,7 +71,6 @@ namespace QLHFC.PresentationTier
             conn.Close();
             dgvHD.DataSource = mytable;
         }
-        //Hàm thêm
         private void btnCreateHoaDon_Click(object sender, EventArgs e)
         {
             //try
@@ -86,7 +87,9 @@ namespace QLHFC.PresentationTier
             //    MessageBox.Show("Lỗi kết nối MySQL.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
         }
+        //
         //Hàm xóa
+        //
         private void btnDelHD_Click(object sender, EventArgs e)
         {
             conn.Open();
@@ -96,7 +99,9 @@ namespace QLHFC.PresentationTier
             conn.Close();
             Read_Data();
         }
+        //
         //Hàm sửa
+        //
         private void btnUpdateHD_Click(object sender, EventArgs e)
         {
             conn.Open();
@@ -106,8 +111,9 @@ namespace QLHFC.PresentationTier
             conn.Close();
             Read_Data();
         }
-
+        //
         //Đọc dữ liệu từ datagridview ra textbox/combobox/picturebox
+        //
         private void dgvHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();
@@ -129,7 +135,9 @@ namespace QLHFC.PresentationTier
             FormCTHD f = new FormCTHD();
             f.Show();
         }
+        //
         //Hàm tìm kiếm
+        //
         private void txtSearchHD_TextChanged(object sender, EventArgs e)
         {
             conn.Open();
@@ -142,7 +150,9 @@ namespace QLHFC.PresentationTier
             conn.Close();
             dgvHD.DataSource = mytable;
         }
+        //
         //Hàm in
+        //
         private void btnPrint_Click(object sender, EventArgs e)
         {
             printPreviewDialog1.Document = printDocument1;
