@@ -19,10 +19,10 @@ namespace QLHFC
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            //
             //Đăng nhập
-            //MySQL connection to retrieve user details into a class on successful log in
+            //
             conn.Open();
-            //Get count, username
             string dangnhap = "SELECT * FROM hfc.nhanvien WHERE Username= '" + txtUsername.Text + "' and Password = '" + txtPassword.Text + "'";
             MySqlCommand command = new MySqlCommand(dangnhap, conn);
             command.ExecuteNonQuery();
