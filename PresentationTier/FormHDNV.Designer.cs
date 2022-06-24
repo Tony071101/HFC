@@ -52,7 +52,6 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnQR = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -240,6 +239,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Turquoise;
+            this.pictureBox1.Image = global::QLHFC.Properties.Resources.momo;
             this.pictureBox1.Location = new System.Drawing.Point(656, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(251, 144);
@@ -260,26 +260,12 @@
             this.btnQR.UseVisualStyleBackColor = false;
             this.btnQR.Click += new System.EventHandler(this.btnQR_Click);
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Cyan;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(913, 86);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 64);
-            this.button2.TabIndex = 52;
-            this.button2.Text = "In mã QR";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // FormHDNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1055, 678);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnQR);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnPrint);
@@ -331,6 +317,5 @@
         private System.Drawing.Printing.PrintDocument printDocument1;
         private PictureBox pictureBox1;
         private Button btnQR;
-        private Button button2;
     }
 }
